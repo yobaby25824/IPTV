@@ -9,8 +9,6 @@ import subprocess #check rtmp源
 
 timestart = datetime.now()
 
-BlackHost=["127.0.0.1:8080","live3.lalifeier.eu.org","newcntv.qcloudcdn.com"]
-
 #读取文本方法
 def read_txt_to_array(file_name):
     try:
@@ -342,7 +340,7 @@ def record_host(host):
         blacklist_dict[host] = 1
         
 # 将结果保存为 txt 文件
-def save_blackhost_to_txt(filename=f"{datetime.now().strftime("%Y%m%d_%H_%M_%S")}_blackhost_count.txt"):
+def save_blackhost_to_txt(filename=f"{(datetime.now().strftime('%Y%m%d_%H_%M_%S'))}_blackhost_count.txt"):
     with open(filename, "w") as file:
         for host, count in blacklist_dict.items():
             file.write(f"{host}: {count}\n")
