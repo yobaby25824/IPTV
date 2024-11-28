@@ -340,6 +340,7 @@ def record_host(host):
     # 如果 host 不在字典中，加入并初始化计数为 1
     else:
         blacklist_dict[host] = 1
+        
 # 将结果保存为 txt 文件
 def save_blackhost_to_txt(filename=f"{datetime.now().strftime("%Y%m%d_%H_%M_%S")}_blackhost_count.txt"):
     with open(filename, "w") as file:
@@ -473,7 +474,7 @@ if __name__ == "__main__":
     print(f"  urls_ok: {urls_ok} ")
     print(f"  urls_ng: {urls_ng} ")
 
-    # save_blackhost_to_txt()
+    save_blackhost_to_txt()
             
 for statistics in url_statistics: #查看各个url的量有多少 2024-08-19
     print(statistics)
