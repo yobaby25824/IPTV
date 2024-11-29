@@ -2,7 +2,7 @@ name: 'WhiteList BlackList'
 
 on:
   schedule:
-    - cron: '0 17 * * *' # UTC
+    - cron: '0 16 * * *' # UTC
   workflow_dispatch:
 
 jobs:
