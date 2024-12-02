@@ -154,7 +154,7 @@ xj_dictionary=read_txt_to_array('地方台/新疆频道.txt')
 urls = read_txt_to_array('assets/urls-daily.txt')
 
 # 添加channel_name前剔除部分特定字符
-removal_list = ["「IPV4」","「IPV6」","[ipv6]","[ipv4]","_电信", "电信","（HD）","[超清]","高清","超清", "-HD","(HK)","AKtv","@"]
+removal_list = ["「IPV4」","「IPV6」","[ipv6]","[ipv4]","_电信", "电信","（HD）","[超清]","高清","超清", "-HD","(HK)","AKtv","@","HD"]
 
 #简繁转换
 def traditional_to_simplified(text: str) -> str:
@@ -272,13 +272,8 @@ def clean_channel_name(channel_name, removal_list):
     for item in removal_list:
         channel_name = channel_name.replace(item, "")
 
-    # 检查并移除末尾的 'HD'
-    if channel_name.endswith("HD"):
-        channel_name = channel_name[:-2]  # 去掉最后两个字符 "HD"
-    
-    if channel_name.endswith("台") and len(channel_name) > 3:
-        channel_name = channel_name[:-1]  # 去掉最后两个字符 "台"
-
+    channel_name = channel_name.replace("CCTV-", "CCTV");
+    channel_name = channel_name.replacr("CCTV0","CCTV);
     return channel_name
 
 # 分发直播源，归类，把这部分从process_url剥离出来，为以后加入whitelist源清单做准备。
