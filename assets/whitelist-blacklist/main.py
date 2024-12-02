@@ -350,7 +350,7 @@ def record_host(host):
         
 if __name__ == "__main__":
     # 自定义源
-    urls = read_txt_to_array('assets/urls-daily.txt')
+    urls = read_txt_to_array('assets/urls.txt')
     
     for url in urls:
         if url.startswith("http"):
