@@ -154,7 +154,7 @@ xj_dictionary=read_txt_to_array('地方台/新疆频道.txt')
 urls = read_txt_to_array('assets/urls-daily.txt')
 
 # 添加channel_name前剔除部分特定字符
-removal_list = ["「IPV4」","「IPV6」","[ipv6]","[ipv4]","_电信", "电信","（HD）","[超清]","高清","超清", "-HD","(HK)","AKtv","@","HD"]
+removal_list = ["「IPV4」","「IPV6」","[ipv6]","[ipv4]","_电信", "电信","（HD）","[超清]","高清","超清", "-HD","(HK)","AKtv","@"]
 
 #简繁转换
 def traditional_to_simplified(text: str) -> str:
