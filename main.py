@@ -237,7 +237,7 @@ def clean_channel_name(channel_name, removal_list):
         channel_name = channel_name.replace(item, "")
         
     channel_name = channel_name.replace("CCTV-", "CCTV");
-    channel_name = channel_name.replace("CCTV0","CCTV);
+    channel_name = channel_name.replace("CCTV0","CCTV");
     channel_name = channel_name.replace("PLUS", "+");
 
     # 处理逻辑
