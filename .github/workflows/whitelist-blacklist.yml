@@ -30,7 +30,8 @@ jobs:
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "github_actions[bot]"
-          git add ./assets/whitelist-blacklist/blacklist_auto.txt ./assets/whitelist-blacklist/whitelist_auto.txt ./assets/whitelist-blacklist/whitelist_auto_tv.txt
+          git add ./assets/whitelist-blacklist/*
+          git add ./assets/whitelist-blacklist/!(main.py)
           git commit -m ":tada:  AutoUpdate $(date +'%Y%m%d')"
 
       - name: Push changes
