@@ -151,7 +151,7 @@ tj_dictionary=read_txt_to_array('地方台/天津频道.txt')
 xj_dictionary=read_txt_to_array('地方台/新疆频道.txt') 
 
 # 自定义源
-urls = read_txt_to_array('assets/urls-daily.txt')
+urls = read_txt_to_array('assets/urls.txt')
 
 
 #简繁转换
@@ -258,7 +258,7 @@ def clean_channel_name(channel_name, removal_list):
         # 定义正则表达式模式，匹配“卫视”后面的内容
         pattern = r'卫视「.*」'
         # 使用sub函数替换匹配的内容为空字符串
-        channel_name = re.sub(pattern, '卫视', part_str)
+        channel_name = re.sub(pattern, '卫视', channel_name)
 
     return channel_name
 
