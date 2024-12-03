@@ -47,7 +47,7 @@ def check_url(url, timeout=6):
     try:
         if url.startswith("http"):
             headers = {
-            'User-Agent': 'okhttp/3.15',
+                'User-Agent': 'okhttp/3.15',
             }
             req = urllib.request.Request(encoded_url, headers=headers)
             with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -260,7 +260,10 @@ url_statistics=[]
 def process_url(url):
     try:
         # 打开URL并读取内容
-        with urllib.request.urlopen(url) as response:
+        headers = {
+            'User-Agent': 'okhttp/3.15',
+        }
+        with urllib.request.Request(url, headers=headers) as response:
             # 以二进制方式读取数据
             data = response.read()
             # 将二进制数据解码为字符串
@@ -350,7 +353,8 @@ def record_host(host):
         
 if __name__ == "__main__":
     # 自定义源
-    urls = read_txt_to_array('assets/urls.txt')
+    # urls = read_txt_to_array('assets/urls.txt')
+    urls = set(read_txt_to_array('live.txt') + read_txt_to_array('others.txt'))
     
     for url in urls:
         if url.startswith("http"):
