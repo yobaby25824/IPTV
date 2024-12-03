@@ -354,7 +354,7 @@ def record_host(host):
 if __name__ == "__main__":
     # 自定义源
     # urls = read_txt_to_array('assets/urls.txt')
-    urls = set(read_txt_to_array('live.txt') + read_txt_to_array('others.txt'))
+    urls = []
     
     for url in urls:
         if url.startswith("http"):
@@ -372,6 +372,7 @@ if __name__ == "__main__":
 
     input_file1 = os.path.join(parent2_dir, 'live.txt')  # 输入文件路径1
     input_file2 = os.path.join(current_dir, 'blacklist_auto.txt')  # 输入文件路径2 
+    input_file3 = os.path.join(parent2_dir, 'others.txt')  # 输入文件路径1
 
     success_file = os.path.join(current_dir, 'whitelist_auto.txt')  # 成功清单文件路径
     success_file_tv = os.path.join(current_dir, 'whitelist_auto_tv.txt')  # 成功清单文件路径（另存一份直接引用源）
@@ -380,7 +381,8 @@ if __name__ == "__main__":
     # 读取输入文件内容
     lines1 = read_txt_file(input_file1)
     lines2 = read_txt_file(input_file2)
-    lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
+    lines3 = read_txt_file(input_file3)
+    lines=urls_all_lines + lines1 + line3 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
     #lines=urls_all_lines  # Test
     
     # 计算合并后合计个数
