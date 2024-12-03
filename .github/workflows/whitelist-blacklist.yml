@@ -31,7 +31,7 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "github_actions[bot]"
           git add ./assets/whitelist-blacklist/*
-          git commit -m ":tada:  AutoUpdate $(date +'%Y%m%d')"
+          git commit -m "黑白名单 AutoUpdate $(date +'%Y%m%d')"
 
       - name: Push changes
         uses: ad-m/github-push-action@master
