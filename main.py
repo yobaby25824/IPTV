@@ -241,24 +241,24 @@ def clean_channel_name(channel_name, removal_list):
     channel_name = channel_name.replace("PLUS", "+");
 
     # 处理逻辑
-    if "CCTV" in channel_name:
-        filtered_str = ''.join(char for char in channel_name if char.isdigit() or char == 'K' or char == '+')
-        if not filtered_str.strip(): #处理特殊情况，如果发现没有找到频道数字返回原名称
-            filtered_str=channel_name.replace("CCTV", "")
+    # if "CCTV" in channel_name:
+    #     filtered_str = ''.join(char for char in channel_name if char.isdigit() or char == 'K' or char == '+')
+    #     if not filtered_str.strip(): #处理特殊情况，如果发现没有找到频道数字返回原名称
+    #         filtered_str=channel_name.replace("CCTV", "")
 
-        if len(filtered_str) > 2 and re.search(r'4K|8K', filtered_str):   # 特殊处理CCTV中部分4K和8K名称
-            # 使用正则表达式替换，删除4K或8K后面的字符，并且保留4K或8K
-            filtered_str = re.sub(r'(4K|8K).*', r'\1', filtered_str)
-            if len(filtered_str) > 2: 
-                # 给4K或8K添加括号
-                filtered_str = re.sub(r'(4K|8K)', r'(\1)', filtered_str)
+    #     if len(filtered_str) > 2 and re.search(r'4K|8K', filtered_str):   # 特殊处理CCTV中部分4K和8K名称
+    #         # 使用正则表达式替换，删除4K或8K后面的字符，并且保留4K或8K
+    #         filtered_str = re.sub(r'(4K|8K).*', r'\1', filtered_str)
+    #         if len(filtered_str) > 2: 
+    #             # 给4K或8K添加括号
+    #             filtered_str = re.sub(r'(4K|8K)', r'(\1)', filtered_str)
                 
-        channel_name="CCTV"+filtered_str 
-    elif "卫视" in channel_name:
-        # 定义正则表达式模式，匹配“卫视”后面的内容
-        pattern = r'卫视「.*」'
-        # 使用sub函数替换匹配的内容为空字符串
-        channel_name = re.sub(pattern, '卫视', channel_name)
+    #     channel_name="CCTV"+filtered_str 
+    # elif "卫视" in channel_name:
+    #     # 定义正则表达式模式，匹配“卫视”后面的内容
+    #     pattern = r'卫视「.*」'
+    #     # 使用sub函数替换匹配的内容为空字符串
+    #     channel_name = re.sub(pattern, '卫视', channel_name)
 
     return channel_name
 
