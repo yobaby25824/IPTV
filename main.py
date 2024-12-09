@@ -562,6 +562,7 @@ all_lines =  ["更新时间,#genre#"] + [version] + ['\n'] +\
              ["💓专享儿童,#genre#"] + read_txt_to_array('专区/儿童专享.txt') + ['\n'] + \
              ["💓专享咪咕,#genre#"] + read_txt_to_array('专区/咪咕直播.txt') + ['\n'] + \
              ["💓专享体育,#genre#"] + read_txt_to_array('专区/体育.txt') + ['\n'] + \
+             ["💓专享英语,#genre#"] + read_txt_to_array('专区/英语频道.txt') + ['\n'] + \
              ["央视频道,#genre#"] + sort_data(ys_dictionary,correct_name_data(ys_lines)) + ['\n'] + \
              ["卫视频道,#genre#"] + sort_data(ws_dictionary,correct_name_data(ws_lines)) + ['\n'] + \
              ["体育频道,#genre#"] + sort_data(ty_dictionary,correct_name_data(ty_lines)) + ['\n'] + \
