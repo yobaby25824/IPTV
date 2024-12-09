@@ -481,14 +481,14 @@ if __name__ == "__main__":
     print(f"  urls_ng: {urls_ng} ")
 
     # 确保路径存在
-blackhost_dir = os.path.join(current_dir, "blackhost")
-os.makedirs(blackhost_dir, exist_ok=True)
+    blackhost_dir = os.path.join(current_dir, "blackhost")
+    os.makedirs(blackhost_dir, exist_ok=True)
 
-# 构造文件名
-blackhost_filename = os.path.join(
-    blackhost_dir,
-    f"blackhost_count.txt"
-)
+    # 构造文件名
+    blackhost_filename = os.path.join(
+        blackhost_dir,
+        f"blackhost_count.txt"
+    )
 
 # 将结果保存为 txt 文件 
 def save_blackhost_to_txt(filename=blackhost_filename):
