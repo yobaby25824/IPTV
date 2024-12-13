@@ -531,7 +531,7 @@ all_lines_simple =  ["更新时间,#genre#"] + [version] + ['\n'] +\
              ["💓专享源1,#genre#"] + read_txt_to_array('专区/专享源①.txt') + ['\n'] + \
              ["💓专享源2,#genre#"] + read_txt_to_array('专区/专享源②.txt') + ['\n'] + \
              ["💓专享定制,#genre#"] + read_txt_to_array('专区/定制源.txt') + ['\n'] + \
-             ["💓专享儿童,#genre#"] + read_txt_to_array('专区/儿童专享.txt') + ['\n'] + \
+             ["💓专享儿童,#genre#"] + read_txt_to_array('专区/儿童.txt') + ['\n'] + \
              ["💓专享咪咕,#genre#"] + read_txt_to_array('专区/咪咕直播.txt') + ['\n'] + \
              ["💓专享体育,#genre#"] + read_txt_to_array('专区/体育.txt') + ['\n'] + \
              ["央视频道,#genre#"] + sort_data(ys_dictionary,correct_name_data(ys_lines)) + ['\n'] + \
@@ -559,7 +559,7 @@ all_lines =  ["更新时间,#genre#"] + [version] + ['\n'] +\
              ["💓专享源1,#genre#"] + read_txt_to_array('专区/专享源①.txt') + ['\n'] + \
              ["💓专享源2,#genre#"] + read_txt_to_array('专区/专享源②.txt') + ['\n'] + \
              ["💓专享定制,#genre#"] + read_txt_to_array('专区/定制源.txt') + ['\n'] + \
-             ["💓专享儿童,#genre#"] + read_txt_to_array('专区/儿童专享.txt') + ['\n'] + \
+             ["💓专享儿童,#genre#"] + read_txt_to_array('专区/儿童.txt') + ['\n'] + \
              ["💓专享咪咕,#genre#"] + read_txt_to_array('专区/咪咕直播.txt') + ['\n'] + \
              ["💓专享体育,#genre#"] + read_txt_to_array('专区/体育.txt') + ['\n'] + \
              ["💓专享英语,#genre#"] + read_txt_to_array('专区/英语频道.txt') + ['\n'] + \
