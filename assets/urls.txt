@@ -16,7 +16,7 @@ https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m
 https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/Collect.m3u
 https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u8
 https://raw.githubusercontent.com/Guovin/TV/gd/output/result.txt
-https://raw.githubusercontent.com/MemoryCollection/IPTV/refs/heads/main/itvlist.txt
+https://raw.gitmirror.com/MemoryCollection/IPTV/main/multicast.txt
 https://raw.githubusercontent.com/wwb521/live/refs/heads/main/tv.m3u
 https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u
 https://raw.githubusercontent.com/xzw832/cmys/refs/heads/main/S_CCTV.txt
@@ -25,7 +25,6 @@ https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u
 https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u
 https://raw.githubusercontent.com/mlzlzj/hnyuan/refs/heads/main/iptv_list.txt
 https://raw.githubusercontent.com/altn2025/iptv/main/iptv.m3u
-https://raw.githubusercontent.com/MemoryCollection/IPTV/main/itvlist.txt
 https://raw.githubusercontent.com/YanG-1989/m3u/refs/heads/main/Gather.m3u
 https://raw.githubusercontent.com/BP3388/BP001.github.io/main/tivi.list
 https://raw.githubusercontent.com/frxz751113/IPTVzb1/refs/heads/main/%E7%BB%BC%E5%90%88%E6%BA%90.txt
