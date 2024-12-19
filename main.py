@@ -95,6 +95,8 @@ xj_lines = [] #地方台-新疆频道
 other_lines = [] #其他
 other_lines_url = [] # 为降低other文件大小，剔除重复url添加
 
+whitelist_lines=read_txt_to_array('assets/whitelist-blacklist/whitelist_auto.txt') #白名单
+
 #读取文本
 # 主频道
 ys_dictionary=read_txt_to_array('主频道/央视频道.txt')
@@ -383,18 +385,7 @@ def process_channel_line(line):
                 if channel_address not in other_lines_url:
                     other_lines_url.append(channel_address)   #记录已加url
                     other_lines.append(line)
-
-
-# 随机获取User-Agent,备用 
-def get_random_user_agent():
-    USER_AGENTS = [
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
-        "Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36",
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36",
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36",
-    ]
-    return random.choice(USER_AGENTS)
-
+                    
 def process_url(url):
     print(f"处理URL: {url}")
     try:
@@ -450,35 +441,24 @@ def sort_data(order, data):
     sorted_data = sorted(data, key=sort_key)
     return sorted_data
     
-# 处理
+#先放白名单
+#读取whitelist,把高响应源从白名单中抽出加入merged_output。
+print(f"添加白名单 whitelist_auto.txt")
+for line in whitelist_lines:
+    if  "#genre#" not in line and "," in line and "://" in line:
+        parts = line.split(",")
+        try:
+            response_time = float(parts[0].replace("ms", ""))
+        except ValueError:
+            print(f"response_time转换失败: {line}")
+            response_time = 60000  # 单位毫秒，转换失败给个60秒
+        if response_time < 2000:  #2s以内的高响应源
+            process_channel_line(",".join(parts[1:]))
+    
+#再加入配置的url
 for url in urls:
     if url.startswith("http"):        
         process_url(url)
-
-#读取whitelist,把高响应源从白名单中抽出加入merged_output。
-print(f"ADD whitelist_auto.txt")
-whitelist_auto_lines=read_txt_to_array('assets/whitelist-blacklist/whitelist_auto.txt') #
-for whitelist_line in whitelist_auto_lines:
-    if  "#genre#" not in whitelist_line and "," in whitelist_line and "://" in whitelist_line:
-        whitelist_parts = whitelist_line.split(",")
-        try:
-            response_time = float(whitelist_parts[0].replace("ms", ""))
-        except ValueError:
-            print(f"response_time转换失败: {whitelist_line}")
-            response_time = 60000  # 单位毫秒，转换失败给个60秒
-        if response_time < 2000:  #2s以内的高响应源
-            process_channel_line(",".join(whitelist_parts[1:]))
-
-# 随机取得URL
-def get_random_url(file_path):
-    urls = []
-    with open(file_path, 'r', encoding='utf-8') as file:
-        for line in file:
-            # 查找逗号后面的部分，即URL
-            url = line.strip().split(',')[-1]
-            urls.append(url)    
-    # 随机返回一个URL
-    return random.choice(urls) if urls else None
 
 # 获取当前的 UTC 时间
 utc_time = datetime.now(timezone.utc)
