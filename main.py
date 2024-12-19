@@ -421,6 +421,7 @@ def process_url(url):
             lines = text.split('\n')
             print(f"行数: {len(lines)}")
             for line in lines:
+                print(f"当前处理: {line}")
                 if  "#genre#" not in line and "," in line and "://" in line:
                     # 拆分成频道名和URL部分
                     channel_name, channel_address = line.split(',', 1)
