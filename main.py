@@ -221,7 +221,7 @@ def check_url_existence(data_list, url):
     :return: True if the URL exists in the list, otherwise False
     """
     # Extract URLs from the data list
-    urls = [item.split(',')[1] for item in data_list]
+    urls = [item.split(',')[1] if len(item.split(',')) > 1 else None for item in data_list]
     return url not in urls #如果不存在则返回true，需要
 
 # 处理带$的URL，把$之后的内容都去掉（包括$也去掉） 【2024-08-08 22:29:11】
