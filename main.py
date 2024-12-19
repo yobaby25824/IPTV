@@ -224,6 +224,7 @@ def check_url_existence(data_list, url):
     """
     # Extract URLs from the data list
     urls = [item.split(',')[1] if len(item.split(',')) > 1 else None for item in data_list]
+    print(f"处理urls: {urls}")
     return url not in urls #如果不存在则返回true，需要
 
 # 处理带$的URL，把$之后的内容都去掉（包括$也去掉） 【2024-08-08 22:29:11】
@@ -277,6 +278,7 @@ def process_channel_line(line):
         channel_address = clean_url(line.split(',')[1].strip())  #把URL中$之后的内容都去掉
         line=channel_name+","+channel_address #重新组织line
         line=line.strip()
+        print(f"处理频道line: {line}")
         if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
             # 根据行内容判断存入哪个对象，开始分发
             if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address) : #央视频道
