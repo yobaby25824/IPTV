@@ -268,16 +268,15 @@ def correct_name_data(name):
 # 分发直播源，归类，把这部分从process_url剥离出来，为以后加入whitelist源清单做准备。
 def process_channel_line(line):
     if  "#genre#" not in line and "#EXTINF:" not in line and "," in line and "://" in line:
-        channel_name = line.split(',')[0].strip()
+        channel_name = line.split(',')[0]
         channel_name = traditional_to_simplified(channel_name)  #繁转简
         channel_name = clean_channel_name(channel_name, removal_list)  #分发前清理channel_name中特定字符
-        channel_name = correct_name_data(channel_name) #根据纠错文件处理
+        channel_name = correct_name_data(channel_name).strip() #根据纠错文件处理
         
-        channel_address = clean_url(line.split(',')[1].strip())  #把URL中$之后的内容都去掉
+        channel_address = clean_url(line.split(',')[1]).strip()  #把URL中$之后的内容都去掉
         line=channel_name+","+channel_address #重新组织line
         
         if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
-            print(f"处理频道line: {line}")
             # 根据行内容判断存入哪个对象，开始分发
             if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address): #央视频道
                 ys_lines.append(line)
