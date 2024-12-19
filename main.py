@@ -273,7 +273,6 @@ def process_channel_line(line):
         channel_address = clean_url(line.split(',')[1].strip())  #把URL中$之后的内容都去掉
         
         line=channel_name+","+channel_address #重新组织line
-        print(f"line内容为: {line}")
         line=line.strip()
         if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
             # 根据行内容判断存入哪个对象，开始分发
@@ -304,7 +303,7 @@ def process_channel_line(line):
             elif channel_name in ihot_dictionary and check_url_existence(ihot_dictionary, channel_address):  #iHOT
                 ihot_lines.append(line)
             elif channel_name in et_dictionary and check_url_existence(et_dictionary, channel_address):  #儿童
-                er_lines.append(line)
+                et_lines.append(line)
             elif channel_name in zy_dictionary and check_url_existence(zy_lines, channel_address):  #综艺频道
                 zy_lines.append(line)
             elif channel_name in mdd_dictionary and check_url_existence(mdd_lines, channel_address):  #埋堆堆
