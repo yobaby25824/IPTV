@@ -49,7 +49,9 @@ dhp_lines = [] #动画片
 xq_lines = [] #戏曲
 js_lines = [] #解说
 mx_lines = [] #明星
-ztp_lines = [] #主题片
+newtv_lines = [] #NewTV
+ihot_lines = [] #iHot
+et_lines = [] #儿童
 zy_lines = [] #综艺频道
 mdd_lines = [] #埋堆堆
 yy_lines = [] #音乐频道
@@ -110,7 +112,9 @@ xq_dictionary=read_txt_to_array('主频道/戏曲频道.txt')
 js_dictionary=read_txt_to_array('主频道/解说频道.txt') 
 cw_dictionary=read_txt_to_array('主频道/春晚.txt') 
 mx_dictionary=read_txt_to_array('主频道/明星.txt') 
-ztp_dictionary=read_txt_to_array('主频道/主题片.txt') 
+newtv_dictionary=read_txt_to_array('主频道/NewTV.txt') 
+ihot_dictionary=read_txt_to_array('主频道/iHOT.txt')
+et_dictionary=read_txt_to_array('主频道/儿童.txt')
 zy_dictionary=read_txt_to_array('主频道/综艺频道.txt') 
 mdd_dictionary=read_txt_to_array('主频道/埋堆堆.txt') 
 yy_dictionary=read_txt_to_array('主频道/音乐频道.txt') 
@@ -302,8 +306,12 @@ def process_channel_line(line):
                 cw_lines.append(line)
             elif channel_name in mx_dictionary and check_url_existence(mx_lines, channel_address):  #明星
                 mx_lines.append(line)
-            elif channel_name in ztp_dictionary and check_url_existence(ztp_lines, channel_address):  #主题片
-                ztp_lines.append(line)
+            elif channel_name in newtv_dictionary and check_url_existence(newtv_dictionary, channel_address):  #NewTV
+                newtv_lines.append(line)
+            elif channel_name in ihot_dictionary and check_url_existence(ihot_dictionary, channel_address):  #iHOT
+                ihot_lines.append(line)
+            elif channel_name in et_dictionary and check_url_existence(et_dictionary, channel_address):  #儿童
+                er_lines.append(line)
             elif channel_name in zy_dictionary and check_url_existence(zy_lines, channel_address):  #综艺频道
                 zy_lines.append(line)
             elif channel_name in mdd_dictionary and check_url_existence(mdd_lines, channel_address):  #埋堆堆
@@ -534,7 +542,8 @@ all_lines_simple =  ["更新时间,#genre#"] + [version] + ['\n'] +\
              ["电影频道,#genre#"] + sort_data(dy_dictionary,correct_name_data(dy_lines)) + ['\n'] + \
              ["电视剧频道,#genre#"] + sort_data(dsj_dictionary,correct_name_data(dsj_lines)) + ['\n'] + \
              ["明星,#genre#"] + sort_data(mx_dictionary,correct_name_data(mx_lines)) + ['\n'] + \
-             ["主题片,#genre#"] + sort_data(ztp_dictionary,correct_name_data(ztp_lines)) + ['\n'] + \
+             ["NewTV,#genre#"] + sort_data(newtv_dictionary,correct_name_data(newtv_lines)) + ['\n'] + \
+             ["iHOT,#genre#"] + sort_data(ihot_dictionary,correct_name_data(ihot_lines)) + ['\n'] + \
              ["港澳台,#genre#"] + sort_data(gat_dictionary,correct_name_data(gat_lines)) + ['\n'] + \
              ["动画片,#genre#"] + sort_data(dhp_dictionary,correct_name_data(dhp_lines))+ ['\n'] + \
              ["综艺频道,#genre#"] + sorted(correct_name_data(zy_lines)) + ['\n'] + \
@@ -546,6 +555,7 @@ all_lines_simple =  ["更新时间,#genre#"] + [version] + ['\n'] +\
 
 # 合并所有对象中的行文本（去重，排序后拼接）
 all_lines =  all_lines_simple + ['\n'] + \
+             ["儿童,#genre#"] + sort_data(et_dictionary,correct_name_data(et_lines)) + ['\n'] + \
              ["国际台,#genre#"] + sort_data(gj_dictionary,set(correct_name_data(gj_lines))) + ['\n'] + \
              ["纪录片,#genre#"] + sort_data(jlp_dictionary,set(correct_name_data(jlp_lines)))+ ['\n'] + \
              ["戏曲频道,#genre#"] + sort_data(xq_dictionary,set(correct_name_data(xq_lines))) + ['\n'] + \
