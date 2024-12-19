@@ -47,7 +47,7 @@ def check_url(url, timeout=6):
     try:
         if url.startswith("http"):
             headers = {
-                'User-Agent': 'okhttp/3.15',
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
             }
             req = urllib.request.Request(encoded_url, headers=headers)
             with urllib.request.urlopen(req, timeout=timeout) as response:
@@ -263,7 +263,7 @@ def process_url(url):
         headers = {
             'User-Agent': 'okhttp/3.15',
         }
-        with urllib.request.Request(url, headers=headers) as response:
+        with urllib.request.Request(url) as response:
             # 以二进制方式读取数据
             data = response.read()
             # 将二进制数据解码为字符串
