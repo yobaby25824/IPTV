@@ -87,6 +87,5 @@ http://154.9.252.167:190/tvlive.txt
 https://gitee.com/tushaoyong/live/raw/master/%E6%8E%A5%E5%8F%A3/IPV6.txt
 https://iptv-org.github.io/iptv/countries/us.m3u
 http://l.gmbbk.com/upload/16401640.txt
-http://122.228.85.203:5988/uploads/tvbox/tv.txt
 http://xhztv.top/zbc.txt
 http://tot.totalh.net/tttt.txt
