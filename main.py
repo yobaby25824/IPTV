@@ -268,7 +268,7 @@ def process_channel_line(line):
         channel_name = line.split(',')[0].strip()
         channel_name = traditional_to_simplified(channel_name)  #繁转简
         channel_name = clean_channel_name(channel_name, removal_list)  #分发前清理channel_name中特定字符
-        channel_name = correct_name_data(channel_name) #根据纠错文件处理
+        # channel_name = correct_name_data(channel_name) #根据纠错文件处理
         
         channel_address = clean_url(line.split(',')[1].strip())  #把URL中$之后的内容都去掉
         
@@ -429,7 +429,6 @@ def process_url(url):
                     else: 
                         # 如果有“#”号，则根据“#”号分隔
                         url_list = channel_address.split('#')
-                        print(f"处理#url_list: {url_list}")
                         for channel_url in url_list:
                             newline=f'{channel_name},{channel_url}'
                             process_channel_line(newline)
