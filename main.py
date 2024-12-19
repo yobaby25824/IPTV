@@ -301,10 +301,10 @@ def process_channel_line(line):
                 js_lines.append(line)
             elif channel_name in cw_dictionary and check_url_existence(cw_lines, channel_address):  #春晚
                 cw_lines.append(line)
-            elif channel_name in newtv_dictionary and check_url_existence(newtv_dictionary, channel_address):  #NewTV
-                newtv_lines.append(line)
-            elif channel_name in ihot_dictionary and check_url_existence(ihot_dictionary, channel_address):  #iHOT
-                ihot_lines.append(line)
+            # elif channel_name in newtv_dictionary and check_url_existence(newtv_dictionary, channel_address):  #NewTV
+            #     newtv_lines.append(line)
+            # elif channel_name in ihot_dictionary and check_url_existence(ihot_dictionary, channel_address):  #iHOT
+            #     ihot_lines.append(line)
             # elif channel_name in et_dictionary and check_url_existence(et_dictionary, channel_address):  #儿童
             #     et_lines.append(line)
             elif channel_name in zy_dictionary and check_url_existence(zy_lines, channel_address):  #综艺频道
