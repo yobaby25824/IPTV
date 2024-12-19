@@ -281,8 +281,6 @@ def process_channel_line(line):
             # 根据行内容判断存入哪个对象，开始分发
             if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address): #央视频道
                 ys_lines.append(line)
-                print(f"处理频道line: {line}")
-                print(f"处理频道line2: {ys_lines}")
             elif channel_name in ws_dictionary and check_url_existence(ws_lines, channel_address): #卫视频道
                 ws_lines.append(line)
             elif channel_name in ty_dictionary and check_url_existence(ty_lines, channel_address):  #体育频道
@@ -397,7 +395,7 @@ def process_url(url):
         
         # 创建一个请求对象并添加自定义header
         req = urllib.request.Request(url)
-        req.add_header('User-Agent', 'okhttp/3.15')
+        # req.add_header('User-Agent', 'okhttp/3.15')
 
         # 打开URL并读取内容
         with urllib.request.urlopen(req) as response:
