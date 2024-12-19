@@ -276,7 +276,8 @@ def process_channel_line(line):
         channel_address = clean_url(line.split(',')[1]).strip()  #把URL中$之后的内容都去掉
         line=channel_name+","+channel_address #重新组织line
         
-        if len(channel_address) > 0 and channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
+        if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
+            print(f"处理line: {line}")
             # 根据行内容判断存入哪个对象，开始分发
             if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address): #央视频道
                 ys_lines.append(line)
@@ -394,7 +395,7 @@ def process_url(url):
         
         # 创建一个请求对象并添加自定义header
         req = urllib.request.Request(url)
-        # req.add_header('User-Agent', 'okhttp/3.15')
+        req.add_header('User-Agent', 'okhttp/3.15')
 
         # 打开URL并读取内容
         with urllib.request.urlopen(req) as response:
@@ -615,7 +616,6 @@ other_lines_hj = len(other_lines)
 print(f"blacklist行数: {combined_blacklist_hj} ")
 print(f"live.txt行数: {all_lines_hj} ")
 print(f"others.txt行数: {other_lines_hj} ")
-
 
 #备用1：http://tonkiang.us
 #备用2：https://www.zoomeye.hk,https://www.shodan.io,https://tv.cctv.com/live/
