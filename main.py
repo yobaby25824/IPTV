@@ -397,6 +397,7 @@ def get_random_user_agent():
     return random.choice(USER_AGENTS)
 
 def process_url(url):
+    print(f"处理URL: {url}")
     try:
         other_lines.append(url+",#genre#")  # 存入other_lines便于check 2024-08-02 10:41
         
@@ -410,12 +411,11 @@ def process_url(url):
             data = response.read()
             # 将二进制数据解码为字符串
             text = data.decode('utf-8')
-            # channel_name=""
-            # channel_address=""
 
             #处理m3u提取channel_name和channel_address
             if is_m3u_content(text):
                 text=convert_m3u_to_txt(text)
+                print(f"处理M3U: {text}")
 
             # 逐行处理内容
             lines = text.split('\n')
@@ -455,7 +455,6 @@ def sort_data(order, data):
 # 处理
 for url in urls:
     if url.startswith("http"):        
-        print(f"处理URL: {url}")
         process_url(url)
 
 #读取whitelist,把高响应源从白名单中抽出加入merged_output。
