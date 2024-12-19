@@ -305,8 +305,8 @@ def process_channel_line(line):
                 newtv_lines.append(line)
             elif channel_name in ihot_dictionary and check_url_existence(ihot_dictionary, channel_address):  #iHOT
                 ihot_lines.append(line)
-            elif channel_name in et_dictionary and check_url_existence(et_dictionary, channel_address):  #儿童
-                et_lines.append(line)
+            # elif channel_name in et_dictionary and check_url_existence(et_dictionary, channel_address):  #儿童
+            #     et_lines.append(line)
             elif channel_name in zy_dictionary and check_url_existence(zy_lines, channel_address):  #综艺频道
                 zy_lines.append(line)
             elif channel_name in mdd_dictionary and check_url_existence(mdd_lines, channel_address):  #埋堆堆
