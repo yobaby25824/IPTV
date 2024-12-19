@@ -271,7 +271,6 @@ def process_channel_line(line):
         channel_name = correct_name_data(channel_name) #根据纠错文件处理
         
         channel_address = clean_url(line.split(',')[1].strip())  #把URL中$之后的内容都去掉
-        print(f"当前内容: {et_dictionary}")
         line=channel_name+","+channel_address #重新组织line
         line=line.strip()
         if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
