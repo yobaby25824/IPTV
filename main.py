@@ -441,11 +441,6 @@ def sort_data(order, data):
     # 按照 order 中的顺序对数据进行排序
     sorted_data = sorted(data, key=sort_key)
     return sorted_data
-    
-#加入配置的url
-for url in urls:
-    if url.startswith("http"):        
-        process_url(url)
 
 #读取whitelist,把高响应源从白名单中抽出加入。
 print(f"添加白名单 whitelist_auto.txt")
@@ -459,6 +454,11 @@ for line in whitelist_lines:
             response_time = 60000  # 单位毫秒，转换失败给个60秒
         if response_time < 2000:  #2s以内的高响应源
             process_channel_line(",".join(parts[1:]))
+
+#加入配置的url
+for url in urls:
+    if url.startswith("http"):        
+        process_url(url)
 
 #有序去重
 def ordered_deduplicate(input_seq):
