@@ -275,11 +275,11 @@ def process_channel_line(line):
         
         channel_address = clean_url(line.split(',')[1].strip())  #把URL中$之后的内容都去掉
         line=channel_name+","+channel_address #重新组织line
-        line=line.strip()
         
         if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
+            print(f"处理频道line: {line}")
             # 根据行内容判断存入哪个对象，开始分发
-            if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address) : #央视频道
+            if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address): #央视频道
                 ys_lines.append(line)
                 print(f"处理频道line: {line}")
                 print(f"处理频道line2: {ys_lines}")
