@@ -37,7 +37,7 @@ combined_blacklist = set(blacklist_auto + blacklist_manual)  #list是个列表�
 
 # 定义多个对象用于存储不同内容的行文本
 # 主频道
-ys_lines = [] #CCTV
+ys_lines = [] #央视频道
 ws_lines = [] #卫视频道
 ty_lines = [] #体育频道
 dy_lines = [] #电影频道
@@ -45,10 +45,8 @@ dsj_lines = [] #电视剧频道
 gat_lines = [] #港澳台
 gj_lines = [] #国际台
 jlp_lines = [] #记录片
-dhp_lines = [] #动画片
 xq_lines = [] #戏曲
 js_lines = [] #解说
-mx_lines = [] #明星
 newtv_lines = [] #NewTV
 ihot_lines = [] #iHot
 et_lines = [] #儿童
@@ -99,7 +97,7 @@ other_lines_url = [] # 为降低other文件大小，剔除重复url添加
 
 #读取文本
 # 主频道
-ys_dictionary=read_txt_to_array('主频道/CCTV.txt')
+ys_dictionary=read_txt_to_array('主频道/央视频道.txt')
 ws_dictionary=read_txt_to_array('主频道/卫视频道.txt') 
 ty_dictionary=read_txt_to_array('主频道/体育频道.txt') 
 dy_dictionary=read_txt_to_array('主频道/电影.txt') 
@@ -107,11 +105,9 @@ dsj_dictionary=read_txt_to_array('主频道/电视剧.txt')
 gat_dictionary=read_txt_to_array('主频道/港澳台.txt') 
 gj_dictionary=read_txt_to_array('主频道/国际台.txt') 
 jlp_dictionary=read_txt_to_array('主频道/纪录片.txt') 
-dhp_dictionary=read_txt_to_array('主频道/动画片.txt') 
 xq_dictionary=read_txt_to_array('主频道/戏曲频道.txt') 
 js_dictionary=read_txt_to_array('主频道/解说频道.txt') 
 cw_dictionary=read_txt_to_array('主频道/春晚.txt') 
-mx_dictionary=read_txt_to_array('主频道/明星.txt') 
 newtv_dictionary=read_txt_to_array('主频道/NewTV.txt') 
 ihot_dictionary=read_txt_to_array('主频道/iHOT.txt')
 et_dictionary=read_txt_to_array('主频道/儿童.txt')
@@ -280,7 +276,7 @@ def process_channel_line(line):
         line=line.strip()
         if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
             # 根据行内容判断存入哪个对象，开始分发
-            if "CCTV" in channel_name and check_url_existence(ys_lines, channel_address) : #央视频道
+            if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address) : #央视频道
                 ys_lines.append(line)
             elif channel_name in ws_dictionary and check_url_existence(ws_lines, channel_address): #卫视频道
                 ws_lines.append(line)
@@ -296,16 +292,12 @@ def process_channel_line(line):
                 gj_lines.append(line)
             elif channel_name in jlp_dictionary and check_url_existence(jlp_lines, channel_address):  #纪录片
                 jlp_lines.append(line)
-            elif channel_name in dhp_dictionary and check_url_existence(dhp_lines, channel_address):  #动画片
-                dhp_lines.append(line)
             elif channel_name in xq_dictionary and check_url_existence(xq_lines, channel_address):  #戏曲
                 xq_lines.append(line)
             elif channel_name in js_dictionary and check_url_existence(js_lines, channel_address):  #解说
                 js_lines.append(line)
             elif channel_name in cw_dictionary and check_url_existence(cw_lines, channel_address):  #春晚
                 cw_lines.append(line)
-            elif channel_name in mx_dictionary and check_url_existence(mx_lines, channel_address):  #明星
-                mx_lines.append(line)
             elif channel_name in newtv_dictionary and check_url_existence(newtv_dictionary, channel_address):  #NewTV
                 newtv_lines.append(line)
             elif channel_name in ihot_dictionary and check_url_existence(ihot_dictionary, channel_address):  #iHOT
@@ -536,17 +528,17 @@ version=formatted_time+","+about_video
 
 # 瘦身版
 all_lines_simple =  ["更新时间,#genre#"] + [version] + ['\n'] +\
-             ["央视频道,#genre#"] + sort_data(ys_dictionary,correct_name_data(ys_lines)) + ['\n'] + \
-             ["卫视频道,#genre#"] + sort_data(ws_dictionary,correct_name_data(ws_lines)) + ['\n'] + \
-             ["港澳台,#genre#"] + sort_data(gat_dictionary,correct_name_data(gat_lines)) + ['\n'] + \
-             ["电影频道,#genre#"] + sort_data(dy_dictionary,correct_name_data(dy_lines)) + ['\n'] + \
-             ["电视剧频道,#genre#"] + sort_data(dsj_dictionary,correct_name_data(dsj_lines)) + ['\n'] + \
-             ["综艺频道,#genre#"] + sorted(correct_name_data(zy_lines)) + ['\n'] + \
-             ["NewTV,#genre#"] + sort_data(newtv_dictionary,correct_name_data(newtv_lines)) + ['\n'] + \
-             ["iHOT,#genre#"] + sort_data(ihot_dictionary,correct_name_data(ihot_lines)) + ['\n'] + \
-             ["体育频道,#genre#"] + sort_data(ty_dictionary,correct_name_data(ty_lines)) + ['\n'] + \
-             ["咪咕直播,#genre#"] + sort_data(migu_dictionary,correct_name_data(migu_lines))+ ['\n'] + \
-             ["埋堆堆,#genre#"] + sort_data(mdd_dictionary,correct_name_data(mdd_lines)) + ['\n'] + \
+             ["央视频道,#genre#"] + sort_data(ys_dictionary,set(correct_name_data(ys_lines))) + ['\n'] + \
+             ["卫视频道,#genre#"] + sort_data(ws_dictionary,set(correct_name_data(ws_lines))) + ['\n'] + \
+             ["港澳台,#genre#"] + sort_data(gat_dictionary,set(correct_name_data(gat_lines))) + ['\n'] + \
+             ["电影频道,#genre#"] + sort_data(dy_dictionary,set(correct_name_data(dy_lines))) + ['\n'] + \
+             ["电视剧频道,#genre#"] + sort_data(dsj_dictionary,set(correct_name_data(dsj_lines))) + ['\n'] + \
+             ["综艺频道,#genre#"] + sort_data(zy_dictionary,set(correct_name_data(zy_lines))) + ['\n'] + \
+             ["NewTV,#genre#"] + sort_data(newtv_dictionary,set(correct_name_data(newtv_lines))) + ['\n'] + \
+             ["iHOT,#genre#"] + sort_data(ihot_dictionary,set(correct_name_data(ihot_lines))) + ['\n'] + \
+             ["体育频道,#genre#"] + sort_data(ty_dictionary,set(correct_name_data(ty_lines))) + ['\n'] + \
+             ["咪咕直播,#genre#"] + sort_data(migu_dictionary,set(correct_name_data(migu_lines)))+ ['\n'] + \
+             ["埋堆堆,#genre#"] + sort_data(mdd_dictionary,set(correct_name_data(mdd_lines))) + ['\n'] + \
              ["音乐频道,#genre#"] + sorted(set(yy_lines)) + ['\n'] + \
              ["游戏频道,#genre#"] + sorted(set(game_lines)) + ['\n'] + \
              ["解说频道,#genre#"] + sorted(set(js_lines))
