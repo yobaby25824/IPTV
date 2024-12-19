@@ -1,3 +1,4 @@
+
 http://120.233.84.209:3568/tv.txt
 http://47.120.41.246:8899/zb.txt
 https://ygbh.site/php/bhzb.php
@@ -14,6 +15,7 @@ https://live.zhoujie218.top/tv/iptv4.txt
 https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u
 https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u
 https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/Collect.m3u
+https://raw.githubusercontent.com/kimwang1978/collect-tv-txt/refs/heads/main/merged_output.txt
 https://raw.githubusercontent.com/joevess/IPTV/main/sources/iptv_sources.m3u8
 https://raw.githubusercontent.com/Guovin/TV/gd/output/result.txt
 https://raw.gitmirror.com/MemoryCollection/IPTV/main/multicast.txt
