@@ -273,7 +273,7 @@ def process_channel_line(line):
         channel_address = clean_url(line.split(',')[1].strip())  #把URL中$之后的内容都去掉
         
         line=channel_name+","+channel_address #重新组织line
-        print(f"内容为: {channel_name}")
+        print(f"line内容为: {line}")
         line=line.strip()
         if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
             # 根据行内容判断存入哪个对象，开始分发
