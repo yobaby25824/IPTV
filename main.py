@@ -242,6 +242,8 @@ def clean_channel_name(channel_name, removal_list):
     channel_name = channel_name.replace("CCTV-", "CCTV");
     channel_name = channel_name.replace("CCTV0","CCTV");
     channel_name = channel_name.replace("PLUS", "+");
+    channel_name = channel_name.replace("NewTV-", "NewTV");
+    channel_name = channel_name.replace("iHOT-", "iHOT");
     return channel_name
 
 #读取纠错频道名称方法
