@@ -276,8 +276,7 @@ def process_channel_line(line):
         channel_address = clean_url(line.split(',')[1]).strip()  #把URL中$之后的内容都去掉
         line=channel_name+","+channel_address #重新组织line
         
-        if channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
-            print(f"处理line: {line}")
+        if len(channel_address) > 0 and channel_address not in combined_blacklist: # 判断当前源是否在blacklist中
             # 根据行内容判断存入哪个对象，开始分发
             if channel_name in ys_dictionary  and check_url_existence(ys_lines, channel_address): #央视频道
                 ys_lines.append(line)
@@ -301,12 +300,12 @@ def process_channel_line(line):
                 js_lines.append(line)
             elif channel_name in cw_dictionary and check_url_existence(cw_lines, channel_address):  #春晚
                 cw_lines.append(line)
-            # elif channel_name in newtv_dictionary and check_url_existence(newtv_dictionary, channel_address):  #NewTV
-            #     newtv_lines.append(line)
-            # elif channel_name in ihot_dictionary and check_url_existence(ihot_dictionary, channel_address):  #iHOT
-            #     ihot_lines.append(line)
-            # elif channel_name in et_dictionary and check_url_existence(et_dictionary, channel_address):  #儿童
-            #     et_lines.append(line)
+            elif channel_name in newtv_dictionary and check_url_existence(newtv_lines, channel_address):  #NewTV
+                newtv_lines.append(line)
+            elif channel_name in ihot_dictionary and check_url_existence(ihot_lines, channel_address):  #iHOT
+                ihot_lines.append(line)
+            elif channel_name in et_dictionary and check_url_existence(et_lines, channel_address):  #儿童
+                et_lines.append(line)
             elif channel_name in zy_dictionary and check_url_existence(zy_lines, channel_address):  #综艺频道
                 zy_lines.append(line)
             elif channel_name in mdd_dictionary and check_url_existence(mdd_lines, channel_address):  #埋堆堆
