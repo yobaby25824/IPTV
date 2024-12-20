@@ -359,8 +359,8 @@ def record_host(host):
         
 if __name__ == "__main__":
     # 自定义源
-    # urls = read_txt_to_array('assets/urls.txt')
-    urls = []
+    urls = read_txt_to_array('assets/urls.txt')
+    # urls = []
     
     for url in urls:
         if url.startswith("http"):
@@ -386,8 +386,8 @@ if __name__ == "__main__":
     lines1 = read_txt_file(input_file1)
     lines2 = read_txt_file(input_file2)
     lines3 = read_txt_file(input_file3)
-    lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
-    #lines=urls_all_lines  # Test
+    # lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
+    lines=urls_all_lines  # Test
     
     # 计算合并后合计个数
     urls_hj_before = len(lines)
@@ -410,8 +410,7 @@ if __name__ == "__main__":
     extracted_parts = [white_line.split(',')[1].strip() if ',' in white_line and len(white_line.split(',')) >= 2 else "" for white_line in lines_whitelist]
     # 再将提取出来的内容构建成集合，利用集合去重等特性（如果有需要的话）
     white_line_parts_set = set(extracted_parts)
-    print(f"白名单集合: {white_line_parts_set}")
-    print(f"处理集合: {lines}")
+    
     # 处理URL并生成成功清单和黑名单
     successlist, blacklist = process_urls_multithreaded(set(lines), white_line_parts_set)
     
