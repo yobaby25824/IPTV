@@ -381,7 +381,7 @@ if __name__ == "__main__":
     input_file3 = os.path.join(parent2_dir, 'others.txt')  # 输入文件路径1
 
     # 读取输入文件内容
-    lines_whitelist = read_txt_file(lines_whitelist)
+    lines_whitelist = read_txt_file(input_whitelist)
     lines1 = read_txt_file(input_file1)
     lines2 = read_txt_file(input_file2)
     lines3 = read_txt_file(input_file3)
