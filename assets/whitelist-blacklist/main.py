@@ -385,7 +385,7 @@ if __name__ == "__main__":
     lines1 = read_txt_file(input_file1)
     lines2 = read_txt_file(input_file2)
     lines3 = read_txt_file(input_file3)
-    lines=urls_all_lines + lines1 + lines3 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
+    lines=urls_all_lines + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
     #lines=urls_all_lines  # Test
     
     # 计算合并后合计个数
