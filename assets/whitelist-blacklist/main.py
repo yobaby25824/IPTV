@@ -246,9 +246,9 @@ def convert_m3u_to_txt(m3u_content):
         # 处理 URL 行
         elif line.startswith("http"):
             txt_lines.append(f"{channel_name},{line.strip()}")
-    
+
+    print(f"m3u内容: {txt_lines} ")
     # 将结果合并成一个字符串，以换行符分隔
-    # return '\n'.join(txt_lines)
     return txt_lines
 
 url_statistics=[]
@@ -274,8 +274,6 @@ def process_url(url):
                 url_statistics.append(f"{len(lines)},{url.strip()}")
                 for line in lines:
                     if  "#genre#" not in line and "," in line and "://" in line:
-                        #channel_name=line.split(',')[0].strip()
-                        #channel_address=line.split(',')[1].strip()
                         urls_all_lines.append(line.strip())
     
     except Exception as e:
@@ -379,7 +377,6 @@ if __name__ == "__main__":
     lines3 = read_txt_file(input_file3)
     # lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
     lines=urls_all_lines
-    print(f"过滤数据后行: {lines} ")
     
     # 计算合并后合计个数
     urls_hj_before = len(lines)
