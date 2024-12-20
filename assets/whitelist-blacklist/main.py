@@ -31,7 +31,7 @@ def read_txt_file(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         lines = [
             line for line in file
-            if not any(skip_str in line for skip_str in skip_strings) and all(req_str in line for req_str in required_strings)
+            if not any(skip_str in line.strip() for skip_str in skip_strings) and all(req_str in line for req_str in required_strings)
         ]
     return lines
 
