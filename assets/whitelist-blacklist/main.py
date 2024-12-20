@@ -174,8 +174,8 @@ def process_line(line, lines_whitelist):
     if len(parts) == 2:
         name, url = parts
         # 白名单判断
-        for url in lines_whitelist:
-            if line == url:
+        for item in lines_whitelist:
+            if line == item:
                 return 0, line
         # 请求验证
         elapsed_time, is_valid = check_url(url)
