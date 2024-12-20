@@ -25,7 +25,7 @@ def read_txt_to_array(file_name):
 
 # 读取文件内容
 def read_txt_file(file_path):
-    skip_strings = ['#genre#']  # 定义需要跳过的字符串数组['#', '@', '#genre#'] 
+    skip_strings = ['#genre#','#EXTINF:-1','"ext"']  # 定义需要跳过的字符串数组['#', '@', '#genre#'] 
     required_strings = ['://']  # 定义需要包含的字符串数组['必需字符1', '必需字符2'] 
 
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -390,11 +390,9 @@ if __name__ == "__main__":
 
     # 分级带#号直播源地址
     lines=split_url(lines)
-    urls_hj_before2 = len(lines)
 
     # 去$
     lines=clean_url(lines)
-    urls_hj_before3 = len(lines)
 
     # 去重
     lines=remove_duplicates_url(lines)
@@ -446,15 +444,6 @@ if __name__ == "__main__":
     print(f"成功清单文件已生成(tv): {success_file_tv}")
     print(f"黑名单文件已生成: {blacklist_file}")
 
-    # 写入history
-    # timenow=datetime.now().strftime("%Y%m%d_%H_%M_%S")
-    # history_success_file = f'history/blacklist/{timenow}_whitelist_auto.txt'
-    # history_blacklist_file = f'history/blacklist/{timenow}_blacklist_auto.txt'
-    # write_list(history_success_file, successlist)
-    # write_list(history_blacklist_file, blacklist)
-    # print(f"history成功清单文件已生成: {history_success_file}")
-    # print(f"history黑名单文件已生成: {history_blacklist_file}")
-
     # 执行的代码
     timeend = datetime.now()
 
@@ -474,8 +463,6 @@ if __name__ == "__main__":
     print(f"结束时间: {timeend_str}")
     print(f"执行时间: {minutes} 分 {seconds} 秒")
     print(f"urls_hj最初: {urls_hj_before} ")
-    print(f"urls_hj分解井号源后: {urls_hj_before2} ")
-    print(f"urls_hj去$后: {urls_hj_before3} ")
     print(f"urls_hj去重后: {urls_hj} ")
     print(f"  urls_ok: {urls_ok} ")
     print(f"  urls_ng: {urls_ng} ")
