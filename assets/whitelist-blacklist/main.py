@@ -210,6 +210,7 @@ def write_list(file_path, data_list):
 # urls里所有的源都读到这里。
 urls_all_lines = []
 
+#M3U格式判断
 def is_m3u_content(text):
     lines = text.splitlines()
     first_line = lines[0].strip()
@@ -253,8 +254,6 @@ def process_url(url):
             data = response.read()
             # 将二进制数据解码为字符串
             text = data.decode('utf-8')
-            print(f"text内容: {text} ")
-            print(f"text内容: {is_m3u_content(text)} ")
             if is_m3u_content(text):
                 m3u_lines=convert_m3u_to_txt(text)
                 url_statistics.append(f"{len(m3u_lines)},{url.strip()}")
@@ -367,6 +366,7 @@ if __name__ == "__main__":
     lines3 = read_txt_file(input_file3)
     # lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
     lines=urls_all_lines
+    print(f"lines内容: {urls_all_lines} ")
     
     # 计算合并后合计个数
     urls_hj_before = len(lines)
