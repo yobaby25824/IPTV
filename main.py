@@ -383,11 +383,12 @@ def process_url(url):
         other_lines.append(url+",#genre#")  # 存入other_lines便于check 2024-08-02 10:41
         
         # 创建一个请求对象并添加自定义header
-        req = urllib.request.Request(url)
-        req.add_header('User-Agent', 'okhttp/3.15')
-
+        headers = {
+            'User-Agent': 'PostmanRuntime-ApipostRuntime/1.1.0',
+        }
+        req = urllib.request.Request(url, headers=headers)
         # 打开URL并读取内容
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req,timeout=10) as response:
             # 以二进制方式读取数据
             data = response.read()
             # 将二进制数据解码为字符串
