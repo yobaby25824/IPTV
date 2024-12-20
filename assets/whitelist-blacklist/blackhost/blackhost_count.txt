@@ -1,0 +1,4 @@
+[2409:8087:5e08:24::11]:6610: 66
+[2409:8087:5e00:24::1e]:6060: 72
+gslbservstudent.itv.cmvideo.cn: 47
+gslbservzqhsw.itv.cmvideo.cn: 47
