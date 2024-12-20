@@ -269,7 +269,7 @@ def process_url(url):
         headers = {
             'User-Agent': 'okhttp/3.15',
         }
-        with urllib.request.Request(url) as response:
+        with urllib.request.Request(url,headers) as response:
             # 以二进制方式读取数据
             data = response.read()
             # 将二进制数据解码为字符串
