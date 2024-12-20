@@ -405,7 +405,10 @@ if __name__ == "__main__":
     urls_hj = len(lines)
 
     # 白名单提前处理
-    white_line_parts_set = {parts[1].strip() for white_line in lines_whitelist if len(white_line.split(',')) >= 2}
+    # 先使用列表推导式提取逗号后的内容，同时可以添加更多的条件判断和处理逻辑
+    extracted_parts = [white_line.split(',')[1].strip() if ',' in white_line and len(white_line.split(',')) >= 2 else "" for white_line in lines_whitelist]
+    # 再将提取出来的内容构建成集合，利用集合去重等特性（如果有需要的话）
+    white_line_parts_set = set(extracted_parts)
 
     # 处理URL并生成成功清单和黑名单
     successlist, blacklist = process_urls_multithreaded(set(lines), white_line_parts_set)
