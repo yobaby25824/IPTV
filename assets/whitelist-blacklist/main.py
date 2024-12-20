@@ -166,26 +166,31 @@ def check_p2p_url(url, timeout):
     return False
 
 # 处理单行文本并检测URL
-def process_line(line):
+def process_line(line, lines_whitelist):
     if "#genre#" in line or "://" not in line :
         return None, None  # 跳过包含“#genre#”的行
+    line=line.strip()
     parts = line.split(',')
     if len(parts) == 2:
         name, url = parts
-        elapsed_time, is_valid = check_url(url.strip())
+        # 白名单判断
+        for url in lines_whitelist:
+            return 0, line
+        # 请求验证
+        elapsed_time, is_valid = check_url(url)
         if is_valid:
-            return elapsed_time, line.strip()
+            return elapsed_time, line
         else:
-            return None, line.strip()
+            return None, line
     return None, None
 
 # 多线程处理文本并检测URL
-def process_urls_multithreaded(lines, max_workers=30):
+def process_urls_multithreaded(lines, lines_whitelist, max_workers=30):
     blacklist =  [] 
     successlist = []
 
-    with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(process_line, line): line for line in lines}
+     with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        futures = {executor.submit(process_line, line, lines_whitelist): line for line in lines}
         for future in as_completed(futures):
             elapsed_time, result = future.result()
             if result:
@@ -370,15 +375,13 @@ if __name__ == "__main__":
     # # 获取根目录
     # root_dir = os.path.abspath(os.sep)  
 
+    input_whitelist = os.path.join(parent2_dir, 'whitelist_manual.txt') # 输入白名单
     input_file1 = os.path.join(parent2_dir, 'live.txt')  # 输入文件路径1
     input_file2 = os.path.join(current_dir, 'blacklist_auto.txt')  # 输入文件路径2 
     input_file3 = os.path.join(parent2_dir, 'others.txt')  # 输入文件路径1
 
-    success_file = os.path.join(current_dir, 'whitelist_auto.txt')  # 成功清单文件路径
-    success_file_tv = os.path.join(current_dir, 'whitelist_auto_tv.txt')  # 成功清单文件路径（另存一份直接引用源）
-    blacklist_file = os.path.join(current_dir, 'blacklist_auto.txt')  # 黑名单文件路径
-
     # 读取输入文件内容
+    lines_whitelist = read_txt_file(lines_whitelist)
     lines1 = read_txt_file(input_file1)
     lines2 = read_txt_file(input_file2)
     lines3 = read_txt_file(input_file3)
@@ -390,16 +393,22 @@ if __name__ == "__main__":
 
     # 分级带#号直播源地址
     lines=split_url(lines)
+    lines_whitelist=split_url(lines_whitelist)
 
     # 去$
     lines=clean_url(lines)
+    lines_whitelist=clean_url(lines_whitelist)
 
     # 去重
     lines=remove_duplicates_url(lines)
+    lines_whitelist=remove_duplicates_url(lines_whitelist)
     urls_hj = len(lines)
 
+    # 白名单提前处理
+    white_line_parts_set = {parts[1].strip() for white_line in lines_whitelist if len(white_line.split(',')) >= 2}
+
     # 处理URL并生成成功清单和黑名单
-    successlist, blacklist = process_urls_multithreaded(lines)
+    successlist, blacklist = process_urls_multithreaded(set(lines), white_line_parts_set)
     
     # 给successlist, blacklist排序
     # 定义排序函数
@@ -423,6 +432,10 @@ if __name__ == "__main__":
                 result.append(",".join(parts[1:]))
         return result
 
+    # 输出文件路径
+    success_file = os.path.join(current_dir, 'whitelist_auto.txt')  # 成功清单文件路径
+    success_file_tv = os.path.join(current_dir, 'whitelist_auto_tv.txt')  # 成功清单文件路径（另存一份直接引用源）
+    blacklist_file = os.path.join(current_dir, 'blacklist_auto.txt')  # 黑名单文件路径
 
     # 加时间戳等
     version=datetime.now().strftime("%Y%m%d-%H-%M-%S")+",url"
@@ -433,6 +446,7 @@ if __name__ == "__main__":
     blacklist = ["更新时间,#genre#"] +[version] + ['\n'] +\
                 ["blacklist,#genre#"]  + blacklist
 
+    
     # 写入成功清单文件
     write_list(success_file, successlist)
     write_list(success_file_tv, successlist_tv)
