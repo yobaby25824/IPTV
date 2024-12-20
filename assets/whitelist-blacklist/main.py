@@ -241,14 +241,12 @@ def convert_m3u_to_txt(m3u_content):
             continue
         # 处理 #EXTINF 开头的行
         if line.startswith("#EXTINF"):
-            # 获取频道名称（假设频道名称在引号后）
+            # 获取频道名称
             channel_name = line.split(',')[-1].strip()
         # 处理 URL 行
         elif line.startswith("http"):
             txt_lines.append(f"{channel_name},{line.strip()}")
 
-    print(f"m3u内容: {txt_lines} ")
-    # 将结果合并成一个字符串，以换行符分隔
     return txt_lines
 
 url_statistics=[]
@@ -265,6 +263,8 @@ def process_url(url):
             data = response.read()
             # 将二进制数据解码为字符串
             text = data.decode('utf-8')
+            print(f"text内容: {text} ")
+            print(f"text内容: {is_m3u_content(text)} ")
             if is_m3u_content(text):
                 m3u_lines=convert_m3u_to_txt(text)
                 url_statistics.append(f"{len(m3u_lines)},{url.strip()}")
