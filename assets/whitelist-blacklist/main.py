@@ -178,12 +178,12 @@ def process_line(line, whitelist):
             if line == item:
                 print(f"白名单数据: {line}")
                 return 0, line
-        # 请求验证
-        elapsed_time, is_valid = check_url(url)
-        if is_valid:
-            return elapsed_time, line
-        else:
-            return None, line
+        # # 请求验证
+        # elapsed_time, is_valid = check_url(url)
+        # if is_valid:
+        #     return elapsed_time, line
+        # else:
+        #     return None, line
     return None, None
 
 # 多线程处理文本并检测URL
