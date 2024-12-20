@@ -188,8 +188,8 @@ def process_line(line, lines_whitelist):
 def process_urls_multithreaded(lines, lines_whitelist, max_workers=30):
     blacklist =  [] 
     successlist = []
-
-     with ThreadPoolExecutor(max_workers=max_workers) as executor:
+    
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
         futures = {executor.submit(process_line, line, lines_whitelist): line for line in lines}
         for future in as_completed(futures):
             elapsed_time, result = future.result()
