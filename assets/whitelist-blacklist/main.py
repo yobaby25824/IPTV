@@ -166,7 +166,7 @@ def check_p2p_url(url, timeout):
     return False
 
 # 处理单行文本并检测URL
-def process_line(line, lines_whitelist):
+def process_line(line, whitelist): 
     if "#genre#" in line or "://" not in line :
         return None, None  # 跳过包含“#genre#”的行
     line=line.strip()
@@ -174,8 +174,9 @@ def process_line(line, lines_whitelist):
     if len(parts) == 2:
         name, url = parts
         # 白名单判断
-        for item in lines_whitelist:
+        for item in whitelist:
             if line == item:
+                print(f"白名单数据: {line}")
                 return 0, line
         # 请求验证
         elapsed_time, is_valid = check_url(url)
@@ -186,12 +187,12 @@ def process_line(line, lines_whitelist):
     return None, None
 
 # 多线程处理文本并检测URL
-def process_urls_multithreaded(lines, lines_whitelist, max_workers=30):
+def process_urls_multithreaded(lines, whitelist, max_workers=30):
     blacklist =  [] 
     successlist = []
     
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
-        futures = {executor.submit(process_line, line, lines_whitelist): line for line in lines}
+        futures = {executor.submit(process_line, line, whitelist): line for line in lines}
         for future in as_completed(futures):
             elapsed_time, result = future.result()
             if result:
@@ -225,15 +226,6 @@ def is_m3u_content(text):
         elif line:
             return True
     return False
-
-def get_url_file_extension(url):
-    # 解析URL
-    parsed_url = urlparse(url)
-    # 获取路径部分
-    path = parsed_url.path
-    # 提取文件扩展名
-    extension = os.path.splitext(path)[1]
-    return extension
 
 def convert_m3u_to_txt(m3u_content):
     # 分行处理
@@ -270,7 +262,7 @@ def process_url(url):
             'User-Agent': 'okhttp/3.15',
         }
         req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req) as response:
+        with urllib.request.urlopen(req, timeout=30) as response:
             # 以二进制方式读取数据
             data = response.read()
             # 将二进制数据解码为字符串
@@ -388,7 +380,7 @@ if __name__ == "__main__":
     lines2 = read_txt_file(input_file2)
     lines3 = read_txt_file(input_file3)
     # lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
-    lines=urls_all_lines  # Test
+    lines=urls_all_lines
     
     # 计算合并后合计个数
     urls_hj_before = len(lines)
@@ -411,7 +403,7 @@ if __name__ == "__main__":
     extracted_parts = [white_line.split(',')[1].strip() if ',' in white_line and len(white_line.split(',')) >= 2 else "" for white_line in lines_whitelist]
     # 再将提取出来的内容构建成集合，利用集合去重等特性（如果有需要的话）
     white_line_parts_set = set(extracted_parts)
-    
+    print(f"白名单集合: {white_line_parts_set}")
     # 处理URL并生成成功清单和黑名单
     successlist, blacklist = process_urls_multithreaded(set(lines), white_line_parts_set)
     
@@ -443,7 +435,7 @@ if __name__ == "__main__":
     blacklist_file = os.path.join(current_dir, 'blacklist_auto.txt')  # 黑名单文件路径
 
     # 加时间戳等
-    version=datetime.now().strftime("%Y%m%d-%H-%M-%S")+",url"
+    version=datetime.now().strftime("%Y%m%d %H:%M")+",url"
     successlist_tv = ["更新时间,#genre#"] +[version] + ['\n'] +\
                   ["whitelist,#genre#"] + remove_prefix_from_lines(successlist)
     successlist = ["更新时间,#genre#"] +[version] + ['\n'] +\
@@ -453,11 +445,11 @@ if __name__ == "__main__":
 
     
     # 写入成功清单文件
-    write_list(success_file, successlist)
-    write_list(success_file_tv, successlist_tv)
+    # write_list(success_file, successlist)
+    # write_list(success_file_tv, successlist_tv)
 
     # 写入黑名单文件
-    write_list(blacklist_file, blacklist)
+    # write_list(blacklist_file, blacklist)
 
     print(f"成功清单文件已生成: {success_file}")
     print(f"成功清单文件已生成(tv): {success_file_tv}")
@@ -495,16 +487,14 @@ if __name__ == "__main__":
         blackhost_dir,
         f"blackhost_count.txt"
     )
+    # 将结果保存为 txt 文件 
+    def save_blackhost_to_txt(filename=blackhost_filename):
+        with open(filename, "w") as file:
+            for host, count in blacklist_dict.items():
+                file.write(f"{host}: {count}\n")
+        print(f"结果已保存到 {filename}")
 
-# 将结果保存为 txt 文件 
-def save_blackhost_to_txt(filename=blackhost_filename):
-    with open(filename, "w") as file:
-        for host, count in blacklist_dict.items():
-            file.write(f"{host}: {count}\n")
-    print(f"结果已保存到 {filename}")
-
-save_blackhost_to_txt()
+    save_blackhost_to_txt()
             
-for statistics in url_statistics: #查看各个url的量有多少 2024-08-19
-    print(statistics)
-    
+    for statistics in url_statistics: #查看各个url的量有多少 2024-08-19
+        print(statistics)
