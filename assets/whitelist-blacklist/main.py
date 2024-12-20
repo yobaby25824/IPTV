@@ -410,7 +410,8 @@ if __name__ == "__main__":
     extracted_parts = [white_line.split(',')[1].strip() if ',' in white_line and len(white_line.split(',')) >= 2 else "" for white_line in lines_whitelist]
     # 再将提取出来的内容构建成集合，利用集合去重等特性（如果有需要的话）
     white_line_parts_set = set(extracted_parts)
-
+    print(f"白名单集合: {white_line_parts_set}")
+    print(f"处理集合: {lines}")
     # 处理URL并生成成功清单和黑名单
     successlist, blacklist = process_urls_multithreaded(set(lines), white_line_parts_set)
     
