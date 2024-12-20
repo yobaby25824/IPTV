@@ -25,7 +25,7 @@ def read_txt_to_array(file_name):
 
 # 读取文件内容
 def read_txt_file(file_path):
-    skip_strings = ['#genre#','#EXTINF:-1','"ext"']  # 定义需要跳过的字符串数组['#', '@', '#genre#'] 
+    skip_strings = ['#genre#','#EXTINF:','"ext"']  # 定义需要跳过的字符串数组['#', '@', '#genre#'] 
     required_strings = ['://']  # 定义需要包含的字符串数组['必需字符1', '必需字符2'] 
 
     with open(file_path, 'r', encoding='utf-8') as file:
