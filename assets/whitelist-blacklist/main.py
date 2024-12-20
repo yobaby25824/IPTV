@@ -379,6 +379,7 @@ if __name__ == "__main__":
     lines3 = read_txt_file(input_file3)
     # lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
     lines=urls_all_lines
+    print(f"过滤数据后行: {urls_all_lines} ")
     
     # 计算合并后合计个数
     urls_hj_before = len(lines)
@@ -442,11 +443,11 @@ if __name__ == "__main__":
 
     
     # 写入成功清单文件
-    write_list(success_file, successlist)
-    write_list(success_file_tv, successlist_tv)
+    # write_list(success_file, successlist)
+    # write_list(success_file_tv, successlist_tv)
 
     # 写入黑名单文件
-    write_list(blacklist_file, blacklist)
+    # write_list(blacklist_file, blacklist)
 
     print(f"成功清单文件已生成: {success_file}")
     print(f"成功清单文件已生成(tv): {success_file_tv}")
