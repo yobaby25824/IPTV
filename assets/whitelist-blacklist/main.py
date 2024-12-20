@@ -173,10 +173,10 @@ def process_line(line, whitelist):
     parts = line.split(',')
     if len(parts) == 2:
         name, url = parts
+        print(f"当前数据: {line}")
         # 白名单判断
         for item in whitelist:
             if line == item:
-                print(f"白名单数据: {line}")
                 return 0, line
         # # 请求验证
         # elapsed_time, is_valid = check_url(url)
