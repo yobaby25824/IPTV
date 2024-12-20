@@ -375,10 +375,10 @@ if __name__ == "__main__":
     # # 获取根目录
     # root_dir = os.path.abspath(os.sep)  
 
-    input_whitelist = os.path.join(parent2_dir, 'whitelist_manual.txt') # 输入白名单
     input_file1 = os.path.join(parent2_dir, 'live.txt')  # 输入文件路径1
     input_file2 = os.path.join(current_dir, 'blacklist_auto.txt')  # 输入文件路径2 
     input_file3 = os.path.join(parent2_dir, 'others.txt')  # 输入文件路径1
+    input_whitelist = os.path.join(current_dir, 'whitelist_manual.txt') # 输入白名单
 
     # 读取输入文件内容
     lines_whitelist = read_txt_file(input_whitelist)
