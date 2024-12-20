@@ -246,10 +246,10 @@ def process_url(url):
     try:
         # 打开URL并读取内容
         headers = {
-            'User-Agent': 'okhttp/3.15',
+            'User-Agent': 'PostmanRuntime-ApipostRuntime/1.1.0',
         }
         req = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(req, timeout=30) as response:
+        with urllib.request.urlopen(req, timeout=10) as response:
             # 以二进制方式读取数据
             data = response.read()
             # 将二进制数据解码为字符串
@@ -418,8 +418,12 @@ if __name__ == "__main__":
     success_file_tv = os.path.join(current_dir, 'whitelist_auto_tv.txt')  # 成功清单文件路径（另存一份直接引用源）
     blacklist_file = os.path.join(current_dir, 'blacklist_auto.txt')  # 黑名单文件路径
 
-    # 加时间戳等
-    version=datetime.now().strftime("%Y%m%d %H:%M")+",url"
+    # 加时间戳
+    # 获取当前的 UTC 时间
+    utc_time = datetime.now(timezone.utc)
+    # 北京时间
+    beijing_time = utc_time + timedelta(hours=8)
+    version=beijing_time.strftime("%Y%m%d %H:%M")+",url"
     successlist_tv = ["更新时间,#genre#"] +[version] + ['\n'] +\
                   ["whitelist,#genre#"] + remove_prefix_from_lines(successlist)
     successlist = ["更新时间,#genre#"] +[version] + ['\n'] +\
