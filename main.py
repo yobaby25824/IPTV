@@ -167,18 +167,8 @@ def traditional_to_simplified(text: str) -> str:
 #M3U格式判断
 def is_m3u_content(text):
     lines = text.splitlines()
-    if not lines:
-        return False
     first_line = lines[0].strip()
-    if first_line!= "#EXTM3U":
-        return False
-    for line in lines[1:]:
-        line = line.strip()
-        if line.startswith("#"):
-            continue
-        elif line:
-            return True
-    return False
+    return first_line.startswith("#EXTM3U")
 
 def convert_m3u_to_txt(m3u_content):
     # 分行处理
