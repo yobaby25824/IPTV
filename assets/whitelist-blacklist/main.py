@@ -379,7 +379,7 @@ if __name__ == "__main__":
     lines3 = read_txt_file(input_file3)
     # lines=urls_all_lines + lines1 + lines2 # 从list变成集合提供检索效率⇒发现用了set后加#合并多行url，故去掉
     lines=urls_all_lines
-    print(f"过滤数据后行: {urls_all_lines} ")
+    print(f"过滤数据后行: {lines} ")
     
     # 计算合并后合计个数
     urls_hj_before = len(lines)
