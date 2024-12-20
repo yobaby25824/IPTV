@@ -173,17 +173,15 @@ def process_line(line, whitelist):
     parts = line.split(',')
     if len(parts) == 2:
         name, url = parts
-        print(f"当前数据: {line}")
         # 白名单判断
-        for item in whitelist:
-            if line == item:
-                return 0, line
-        # # 请求验证
-        # elapsed_time, is_valid = check_url(url)
-        # if is_valid:
-        #     return elapsed_time, line
-        # else:
-        #     return None, line
+        if url in whitelist:
+            return 0, line
+        # 请求验证
+        elapsed_time, is_valid = check_url(url)
+        if is_valid:
+            return elapsed_time, line
+        else:
+            return None, line
     return None, None
 
 # 多线程处理文本并检测URL
@@ -403,7 +401,6 @@ if __name__ == "__main__":
     extracted_parts = [white_line.split(',')[1].strip() if ',' in white_line and len(white_line.split(',')) >= 2 else "" for white_line in lines_whitelist]
     # 再将提取出来的内容构建成集合，利用集合去重等特性（如果有需要的话）
     white_line_parts_set = set(extracted_parts)
-    print(f"白名单集合: {white_line_parts_set}")
     # 处理URL并生成成功清单和黑名单
     successlist, blacklist = process_urls_multithreaded(set(lines), white_line_parts_set)
     
@@ -445,11 +442,11 @@ if __name__ == "__main__":
 
     
     # 写入成功清单文件
-    # write_list(success_file, successlist)
-    # write_list(success_file_tv, successlist_tv)
+    write_list(success_file, successlist)
+    write_list(success_file_tv, successlist_tv)
 
     # 写入黑名单文件
-    # write_list(blacklist_file, blacklist)
+    write_list(blacklist_file, blacklist)
 
     print(f"成功清单文件已生成: {success_file}")
     print(f"成功清单文件已生成(tv): {success_file_tv}")
