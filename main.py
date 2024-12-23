@@ -95,7 +95,8 @@ xj_lines = [] #地方台-新疆频道
 other_lines = [] #其他
 other_lines_url = [] # 为降低other文件大小，剔除重复url添加
 
-whitelist_lines=read_txt_to_array('assets/whitelist-blacklist/whitelist_auto.txt') #白名单
+whitelist_lines=read_txt_to_array('assets/whitelist-blacklist/whitelist_manual.txt') #白名单
+whitelist_auto_lines=read_txt_to_array('assets/whitelist-blacklist/whitelist_auto.txt') #白名单
 
 #读取文本
 # 主频道
@@ -433,9 +434,14 @@ def sort_data(order, data):
     sorted_data = sorted(data, key=sort_key)
     return sorted_data
 
+#白名单加入
+print(f"添加白名单 whitelist.txt")
+for line in whitelist_lines:
+    process_channel_line(line)
+
 #读取whitelist,把高响应源从白名单中抽出加入。
 print(f"添加白名单 whitelist_auto.txt")
-for line in whitelist_lines:
+for line in whitelist_auto_lines:
     if  "#genre#" not in line and "," in line and "://" in line:
         parts = line.split(",")
         try:
