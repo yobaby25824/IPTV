@@ -1,5 +1,6 @@
 http://120.233.84.209:3568/tv.txt
 http://47.120.41.246:8899/zb.txt
+http://47.120.41.246:8899/zb2.txt
 https://ygbh.site/php/bhzb.php
 http://aktv.top/live.txt
 https://gitee.com/jin-xueling/cinematography/raw/master/json.txt
