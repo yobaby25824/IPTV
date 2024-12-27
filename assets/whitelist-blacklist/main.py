@@ -345,7 +345,7 @@ if __name__ == "__main__":
             print(f"处理URL: {url}")
             process_url(url)   #读取上面url清单中直播源存入urls_all_lines
 
-    print(f"urls_all_lines：{urls_all_lines}')
+    print(f"处理urls_all_lines: {urls_all_lines}")
     # 获取当前脚本所在的目录
     current_dir = os.path.dirname(os.path.abspath(__file__))
     # 获取上一层目录
