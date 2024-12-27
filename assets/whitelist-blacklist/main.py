@@ -463,8 +463,8 @@ if __name__ == "__main__":
     print(f"执行时间: {minutes} 分 {seconds} 秒")
     print(f"urls_hj最初: {urls_hj_before} ")
     print(f"urls_hj去重后: {urls_hj} ")
-    print(f"  urls_ok: {urls_ok} ")
-    print(f"  urls_ng: {urls_ng} ")
+    print(f"urls_ok: {urls_ok} ")
+    print(f"urls_ng: {urls_ng} ")
 
     # 确保路径存在
     blackhost_dir = os.path.join(current_dir, "blackhost")
