@@ -337,15 +337,14 @@ def record_host(host):
         
 if __name__ == "__main__":
     # 自定义源
-    # urls = read_txt_to_array('assets/urls.txt')
-    urls = ['https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u']
+    urls = read_txt_to_array('assets/urls.txt')
+    # urls = ['https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u']
     
     for url in urls:
         if url.startswith("http"):
             print(f"处理URL: {url}")
             process_url(url)   #读取上面url清单中直播源存入urls_all_lines
-
-    print(f"处理urls_all_lines: {urls_all_lines}")
+            
     # 获取当前脚本所在的目录
     current_dir = os.path.dirname(os.path.abspath(__file__))
     # 获取上一层目录
