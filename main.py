@@ -285,7 +285,7 @@ def process_channel_line(line):
                 if check_url_existence(dsj_lines, channel_address):  
                     dsj_lines.append(line)
             elif channel_name in gat_dictionary: #港澳台
-                check_url_existence(gat_lines, channel_address):
+                if check_url_existence(gat_lines, channel_address):
                     gat_lines.append(line)
             elif channel_name in gj_dictionary: #国际台
                 if check_url_existence(gj_lines, channel_address):
