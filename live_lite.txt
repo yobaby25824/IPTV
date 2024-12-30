@@ -1,5 +1,5 @@
 更新时间,#genre#
-20241230 10:23,https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001
+20241230 10:47,https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001
 
 
 央视频道,#genre#
@@ -4996,6 +4996,7 @@ CCTV13,http://676a02.tv.netsite.cc/proxy/1942371728/1942371728.m3u8
 CCTV13,https://fmbox.cc/公众号玉玉软件库/tv/migu.php?id=cctv13
 CCTV13,http://123.129.70.178:9901/tsfile/live/0013_1.m3u8
 CCTV13,http://114.240.44.242:8888/udp/239.3.1.124:8128
+CCTV13,http://219.159.194.18:8181/tsfile/live/0013_1.m3u8
 CCTV13,http://hms184nc1972679574.live.aikan.miguvideo.com/wh7f454c46tw1586189138_-1841939918/envivo_x/2018/SD/cctv13/2000/01.m3u8?msisdn=guest&Channel_ID=0119_04102000-99000_400300000040002&client_ip=139.198.127.250&timestamp=20230816073736&ContentId=265667474&timezone=UTC&mtv_session=8007a0a816a3740025b4925aeae306b3&HlsSubType=1&HlsProfileId=1&nphaid=0&encrypt=9ef05645ea51ea0bcfe8d603b748a30e
 CCTV13,http://171.217.146.226:55555/udp/239.93.0.66:5140
 CCTV13,http://61.156.228.12:8154/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
@@ -5007,7 +5008,6 @@ CCTV13,http://223.241.247.214:9901/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1
 CCTV13,http://123.56.129.203:5431/rtp/225.1.1.10:8128
 CCTV13,http://123.56.129.203:5431/rtp/225.1.8.168:8130
 CCTV13,http://ha.xushining.com:50000/udp/225.1.2.193:5002
-CCTV13,http://219.159.194.18:8181/tsfile/live/0013_1.m3u8
 CCTV13,p3p://108.181.32.169:13517/64260e45000ccab2ee01428e6da4043d
 CCTV13,http://223.166.234.119:7777/tsfile/live/0013_1.m3u8?key=txiptv&playlive=1&authid=0
 CCTV13,http://14c5da.tv.netsite.cc/proxy/1942371728/1942371728.m3u8
@@ -8183,6 +8183,7 @@ CETV4,http://[2409:8087:74d6:22::7]:6410/270000001128/9900000072/index.m3u8?chan
 东南卫视,http://dms.yryyj.site:8188/udp/239.76.245.190:1234
 东南卫视,http://175.16.180.250:9901/tsfile/live/0137_1.m3u8
 东南卫视,http://114.240.44.242:8888/udp/239.3.1.156:8148
+东南卫视,http://219.159.194.18:8181/tsfile/live/0137_1.m3u8
 东南卫视,http://106.53.99.30/dl/netsite.php?id=2201
 东南卫视,http://8.138.7.223/tv/fjtv.php?id=5
 东南卫视,http://lu.wqwqwq.sbs/itv/5000000004000010584.m3u8?cdn=bestzb
@@ -8193,7 +8194,6 @@ CETV4,http://[2409:8087:74d6:22::7]:6410/270000001128/9900000072/index.m3u8?chan
 东南卫视,http://61.136.67.238:50085/tsfile/live/0137_1.m3u8?key=txiptv&playlive=1&authid=0
 东南卫视,http://125.82.171.210:8888/rtp/235.254.198.35:1416
 东南卫视,http://219.147.200.9:18080/newlive/live/hls/44/live.m3u8
-东南卫视,http://219.159.194.18:8181/tsfile/live/0137_1.m3u8
 东南卫视,p3p://108.181.32.169:13517/64260fcb00035aa0ee0733907e64579c
 东南卫视,http://14c5da.tv.netsite.cc/proxy/698479958/698479958.m3u8
 东南卫视,http://14c5da.tv.netsite.cc/proxy/1989099435/1989099435.m3u8
@@ -16524,6 +16524,7 @@ AMC电影,http://61.221.215.25:8800/hls/43/index.m3u8
 电视剧频道,#genre#
 仙剑奇侠传,http://jiaojirentv.top/2020/yy.php?id=1382749903
 仙剑奇侠传,https://lunbo.freetv.top/yy/1382749903
+仙剑奇侠传,http://rihou.cc:555/yyd.php?id=1382749903
 与凤行,http://rihou.cc:555/hyd.php?id=26355866
 与凤行,http://159.75.85.63:35455/huya/26355866
 与凤行,http://cfss.cc/cdn/hy/26355866.m3u8
@@ -16545,6 +16546,7 @@ AMC电影,http://61.221.215.25:8800/hls/43/index.m3u8
 繁花,http://cdn.jdshipin.com:8880/huya.php?id=21059580
 小欢喜,https://lunbo.freetv.top/yy/1382737888
 小欢喜,https://live.metshop.top/yy/1382737888
+鹊刀门传奇,http://rihou.cc:555/yyd.php?id=1355344777
 鹊刀门传奇,http://cdn.jdshipin.com:8880/huya.php?id=29805872
 你是我的荣耀,http://cdn.jdshipin.com:8880/huya.php?id=11352920
 盗慕笔记鬼灯,https://live.metshop.top/yy/1382765507
