@@ -2,7 +2,12 @@ NewTV超级体育,超级体育,NewTV_超级体育,NEWTV超级体育
 NewTV超级电影,超级电影
 NewTV超级电视剧,超级电视剧
 NewTV东北热剧,东北热剧
-NewTV东北热剧,东北热剧
+NewTV欢乐剧场,欢乐剧场
+NewTV纪实科教,纪实科教
+NewTV古装剧场,古装剧场
+NewTV健康有约,健康有约
+NewTV精彩搏击,精彩搏击
+NewTV炫舞未来,炫舞未来
 NewTV海外剧场,海外剧场
 NewTV中国功夫,中国功夫
 NewTV军事评论,军事评论
@@ -24,31 +29,34 @@ NewTV金牌综艺,金牌综艺,NEWTV金牌综艺,NewTV_金牌综艺
 NewTV超级综艺,超级综艺,NEWTV超级综艺,NewTV_超级综艺
 NewTV黑莓动画,黑莓动画,NewTV_黑莓动画
 NewTV黑莓电影,黑莓电影
-NewTV哒啵电竞,NewTV黑莓电竞
+NewTV哒啵电竞,哒啵电竞,NewTV黑莓电竞,黑莓电竞
 
 CHC动作电影,CHC动作电影频道,动作电影
 CHC影迷电影,CHC影迷电影频道,影迷电影
 CHC家庭影院,CHC家庭影院频道,家庭影院
 
-CCTV1,CCTV1综合
-CCTV2,CCTV2财经
-CCTV3,CCTV3综艺
+CCTV1,CCTV1综合,CCTV1 综合
+CCTV2,CCTV2财经,CCTV2 财经 
+CCTV3,CCTV3综艺,CCTV3 综艺
 CCTV4,CCTV4中文
-CCTV5,CCTV5体育
-CCTV5+,CCTV+5+体育
-CCTV6,CCTV6电影
-CCTV7,CCTV7国防
-CCTV8,CCTV8剧集
-CCTV9,CCTV9纪录
-CCTV10,CCTV10科教
-CCTV11,CCTV11戏曲
-CCTV12,CCTV12社会
+CCTV5,CCTV5体育,CCTV5 体育
+CCTV5+,CCTV+5+体育,CCTV5+ 体育赛事
+CCTV6,CCTV6电影,CCTV6 电影
+CCTV7,CCTV7国防,CCTV7 国防军事
+CCTV8,CCTV8剧集,CCTV8 电视剧
+CCTV9,CCTV9纪录,CCTV9 纪录
+CCTV10,CCTV10科教,CCTV10 科教
+CCTV11,CCTV11戏曲,CCTV11 戏曲
+CCTV12,CCTV12社会,CCTV12 社会与法
 CCTV13,CCTV13新闻
-CCTV14,CCTV14少儿
-CCTV15,CCTV15音乐
-CCTV16,CCTV16奥林
-CCTV17,CCTV17农业
+CCTV14,CCTV14少儿,CCTV14 少儿
+CCTV15,CCTV15音乐,CCTV15 音乐
+CCTV16,CCTV16奥林,CCTV16 奥林匹克 
+CCTV17,CCTV17农业,CCTV17 农业农村 
 CCTV央视文化精品,CCTV文化精品
+CETV1,CETV-1
+CETV2,CETV-2
+CETV4,CETV-4
 
 新闻综合,上海新闻综合,上海新闻,上海新综,上视新闻
 第一财经,上海第一财经,上海财经
