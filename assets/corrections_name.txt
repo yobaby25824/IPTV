@@ -6,7 +6,6 @@ NewTV欢乐剧场,欢乐剧场
 NewTV纪实科教,纪实科教
 NewTV古装剧场,古装剧场
 NewTV健康有约,健康有约
-NewTV精彩搏击,精彩搏击
 NewTV炫舞未来,炫舞未来
 NewTV海外剧场,海外剧场
 NewTV中国功夫,中国功夫
@@ -18,7 +17,7 @@ NewTV家庭剧场,家庭剧场
 NewTV怡伴健康,怡伴健康
 NewTV惊悚悬疑,惊悚悬疑
 NewTV明星大片,明星大片
-NewTV武搏世界,武搏世界
+NewTV武搏世界,武搏世界,NewTV精彩搏击,精彩搏击
 NewTV潮妈辣婆,潮妈辣婆
 NewTV爱情喜剧,爱情喜剧
 NewTV精品体育,精品体育
