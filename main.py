@@ -491,11 +491,13 @@ def sort_data(order, data):
     return sorted_data
 
 #白名单加入
+other_lines.append("白名单,#genre#")
 print(f"添加白名单 whitelist.txt")
 for line in whitelist_lines:
     process_channel_line(line)
 
 #读取whitelist,把高响应源从白名单中抽出加入。
+other_lines.append("白名单测速,#genre#")
 print(f"添加白名单 whitelist_auto.txt")
 for line in whitelist_auto_lines:
     if  "#genre#" not in line and "," in line and "://" in line:
