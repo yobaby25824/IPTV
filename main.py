@@ -213,6 +213,8 @@ def check_url_existence(data_list, url):
     :param url: The URL to check for existence
     :return: True if the URL exists in the list, otherwise False
     """
+    if "127.0.0.1" in url:
+        return False
     # Extract URLs from the data list
     urls = [item.split(',')[1] for item in data_list]
     return url not in urls #如果不存在则返回true，需要
