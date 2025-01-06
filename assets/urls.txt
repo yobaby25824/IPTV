@@ -8,6 +8,9 @@ https://live.freetv.top/huyayqk.m3u
 https://live.freetv.top/douyuyqk.m3u
 https://www.goodiptv.club/bililive.m3u
 https://www.goodiptv.club/yylunbo.m3u?url=https://lunbo.freetv.top
+http://wx.thego.cn/hk.txt
+https://livetv.wqwqwq.sbs/tv.m3u
+https://tvv.wqwqwq.sbs/iptv.m3u
 https://live.zhoujie218.top/tv/iptv4.txt
 https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u
 https://raw.githubusercontent.com/fanmingming/live/refs/heads/main/tv/m3u/ipv6.m3u
