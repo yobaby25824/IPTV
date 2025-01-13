@@ -1,13 +1,10 @@
 http://47.120.41.246:8899/zb.txt
-http://47.120.41.246:8899/zb2.txt
 https://ygbh.site/php/bhzb.php
 https://tv.iill.top/m3u/Gather
 https://tv.iill.top/m3u/Live
 https://tv.iill.top/m3u/Sport
 https://live.freetv.top/huyayqk.m3u
 https://live.freetv.top/douyuyqk.m3u
-https://www.goodiptv.club/bililive.m3u
-https://www.goodiptv.club/yylunbo.m3u?url=https://lunbo.freetv.top
 http://wx.thego.cn/hk.txt
 https://livetv.wqwqwq.sbs/tv.m3u
 https://tvv.wqwqwq.sbs/iptv.m3u
@@ -69,7 +66,6 @@ https://m3u.ibert.me/txt/y_g.txt
 http://xhztv.top/v6.txt
 http://1805842a.123nat.com:66/agent/2.txt
 https://raw.gitcode.com/hjf520/00/raw/main/sirenzb.txt
-http://154.9.252.167:190/tvlive.txt
 https://gitee.com/tushaoyong/live/raw/master/%E6%8E%A5%E5%8F%A3/IPV6.txt
 https://iptv-org.github.io/iptv/countries/us.m3u
 http://xhztv.top/zbc.txt
