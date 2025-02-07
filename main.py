@@ -449,8 +449,20 @@ def process_url(url):
             # 以二进制方式读取数据
             data = response.read()
             # 将二进制数据解码为字符串
-            text = data.decode('utf-8')
-
+            try:
+                # 先尝试 UTF-8 解码
+                text = data.decode('utf-8')
+            except UnicodeDecodeError:
+                try:
+                    # 若 UTF-8 解码失败，尝试 GBK 解码
+                    text = data.decode('gbk')
+                except UnicodeDecodeError:
+                    try:
+                        # 若 GBK 解码失败，尝试 ISO-8859-1 解码
+                        text = data.decode('iso-8859-1')
+                    except UnicodeDecodeError:
+                        print("无法确定合适的编码格式进行解码。")
+                        
             #处理m3u提取channel_name和channel_address
             if is_m3u_content(text):
                 text=convert_m3u_to_txt(text)
