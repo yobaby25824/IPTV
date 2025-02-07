@@ -30,6 +30,7 @@ https://raw.githubusercontent.com/BurningC4/Chinese-IPTV/master/TV-IPV4.m3u
 https://raw.githubusercontent.com/xzw832/cmys/refs/heads/main/S_CCTV.txt
 https://raw.githubusercontent.com/xzw832/cmys/refs/heads/main/S_weishi.txt
 https://raw.githubusercontent.com/YueChan/Live/main/APTV.m3u
+https://raw.githubusercontent.com/MemoryCollection/IPTV/refs/heads/main/hotel.txt
 https://raw.githubusercontent.com/Kimentanm/aptv/master/m3u/iptv.m3u
 https://raw.githubusercontent.com/mlzlzj/hnyuan/refs/heads/main/iptv_list.txt
 https://raw.githubusercontent.com/altn2025/iptv/main/iptv.m3u
@@ -53,7 +54,6 @@ https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5
 https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E5%9B%BD%E5%86%85%E7%94%B5%E8%A7%86%E5%8F%B02023.m3u8
 https://raw.githubusercontent.com/imDazui/Tvlist-awesome-m3u-m3u8/master/m3u/%E8%BD%AE%E6%92%AD_%E5%8D%8E%E6%95%B0.%E9%BB%91%E8%8E%93.NewTV.SiTV.CIBN.m3u
 https://raw.githubusercontent.com/yuanzl77/IPTV/refs/heads/main/live.txt
-https://raw.gitmirror.com/MemoryCollection/IPTV/main/multicast.txt
 https://iptv-org.github.io/iptv/languages/zho.m3u
 https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1715581924111/live1.txt
 https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1715581924675/live2.txt
@@ -75,7 +75,6 @@ https://m3u.ibert.me/txt/ycl_iptv.txt
 https://m3u.ibert.me/txt/y_g.txt
 http://xhztv.top/v6.txt
 http://1805842a.123nat.com:66/agent/2.txt
-https://raw.gitcode.com/hjf520/00/raw/main/sirenzb.txt
 https://gitee.com/tushaoyong/live/raw/master/%E6%8E%A5%E5%8F%A3/IPV6.txt
 https://iptv-org.github.io/iptv/countries/us.m3u
 http://xhztv.top/zbc.txt
