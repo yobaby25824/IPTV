@@ -16,7 +16,6 @@ http://www.stream-link.org/stream-link.m3u
 https://fel.forxhr.top:2022/down.php/c1d38fe9c83d8387e898a16e0ce5ade1.txt
 https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1724505579710/总统电视27.txt
 https://jihulab.com/-/snippets/5265/raw/main/.txt
-https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1736923192652/boboji.m3u
 https://raw.githubusercontent.com/cyalias/mytvs-github/refs/heads/main/mytv.txt
 https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8
 https://raw.githubusercontent.com/YanG-1989/m3u/main/Gather.m3u
