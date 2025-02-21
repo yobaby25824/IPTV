@@ -1,5 +1,4 @@
 http://47.120.41.246:8899/zb.txt
-https://www.freetv.top/migu.m3u
 https://ygbh.site/php/bhzb.php
 https://tv.iill.top/m3u/Gather
 https://tv.iill.top/m3u/Live
@@ -7,14 +6,11 @@ https://tv.iill.top/m3u/Sport
 https://live.freetv.top/huyayqk.m3u
 https://live.freetv.top/douyuyqk.m3u
 http://wx.thego.cn/hk.txt
-https://livetv.wqwqwq.sbs/tv.m3u
 https://tvv.wqwqwq.sbs/iptv.m3u
 https://live.zhoujie218.top/tv/iptv4.txt
 https://tv.850930.xyz/kdsb.txt
 https://tv.850930.xyz/pix.m3u
-http://www.stream-link.org/stream-link.m3u
 https://fel.forxhr.top:2022/down.php/c1d38fe9c83d8387e898a16e0ce5ade1.txt
-https://fs-im-kefu.7moor-fs1.com/ly/4d2c3f00-7d4c-11e5-af15-41bf63ae4ea0/1724505579710/总统电视27.txt
 https://jihulab.com/-/snippets/5265/raw/main/.txt
 https://raw.githubusercontent.com/cyalias/mytvs-github/refs/heads/main/mytv.txt
 https://raw.githubusercontent.com/Free-TV/IPTV/master/playlist.m3u8
@@ -37,7 +33,6 @@ https://raw.githubusercontent.com/BP3388/BP001.github.io/main/tivi.list
 https://raw.githubusercontent.com/frxz751113/IPTVzb1/refs/heads/main/%E7%BB%BC%E5%90%88%E6%BA%90.txt
 https://raw.githubusercontent.com/Supprise0901/TVBox_live/main/live.txt
 https://raw.githubusercontent.com/gaotianliuyun/gao/master/list.txt
-https://raw.githubusercontent.com/fenxp/iptv/main/live/tvlive.txt
 https://raw.githubusercontent.com/zwc456baby/iptv_alive/master/live.txt
 https://raw.githubusercontent.com/vbskycn/iptv/master/tv/iptv4.txt
 https://raw.githubusercontent.com/vbskycn/iptv/master/tv/hd.txt
@@ -63,7 +58,6 @@ http://ww.weidonglong.com/dsj.txt
 https://fm1077.serv00.net/SmartTV.m3u
 http://rihou.cc:555/gggg.nzk
 http://rihou.cc:567/gggg.nzk
-https://freetv.fun/test_channels_original_new.txt
 https://live.zbds.top/tv/iptv4.txt
 https://live.zbds.top/tv/iptv6.txt
 http://home.jundie.top:81/Cat/tv/live.txt
