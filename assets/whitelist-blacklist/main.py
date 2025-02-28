@@ -466,17 +466,10 @@ if __name__ == "__main__":
     print(f"urls_ok: {urls_ok} ")
     print(f"urls_ng: {urls_ng} ")
 
-    # 确保路径存在
-    blackhost_dir = os.path.join(current_dir, "blackhost")
-    os.makedirs(blackhost_dir, exist_ok=True)
-
-    # 构造文件名
-    blackhost_filename = os.path.join(
-        blackhost_dir,
-        f"blackhost_count.txt"
-    )
+    # 黑名单Host路径
+    blackhost_file = os.path.join(current_dir, "blackhost_count.txt")
     # 将结果保存为 txt 文件 
-    def save_blackhost_to_txt(filename=blackhost_filename):
+    def save_blackhost_to_txt(filename=blackhost_file):
         with open(filename, "w") as file:
             for host, count in blacklist_dict.items():
                 file.write(f"{host}: {count}\n")
