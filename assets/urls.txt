@@ -1,3 +1,4 @@
+https://freetv.fun/test_channels_original_new.txt
 http://47.120.41.246:8899/zb.txt
 https://ygbh.site/php/bhzb.php
 https://tv.iill.top/m3u/Gather
