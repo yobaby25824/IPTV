@@ -663,12 +663,7 @@ total_seconds = elapsed_time.total_seconds()
 # 转换为分钟和秒
 minutes = int(total_seconds // 60)
 seconds = int(total_seconds % 60)
-# 格式化开始和结束时间
-timestart_str = timestart.strftime("%Y%m%d_%H_%M_%S")
-timeend_str = timeend.strftime("%Y%m%d_%H_%M_%S")
 
-print(f"开始时间: {timestart_str}")
-print(f"结束时间: {timeend_str}")
 print(f"执行时间: {minutes} 分 {seconds} 秒")
 
 combined_blacklist_hj = len(combined_blacklist)
