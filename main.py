@@ -636,7 +636,7 @@ def make_m3u(txt_file, m3u_file):
             elif len(parts) == 2:
                 channel_name = parts[0]
                 channel_url = parts[1]
-                logo_url="https://epg.112114.free.hr/logo/"+channel_name+".png"
+                logo_url="https://epg.112114.xyz/logo/"+channel_name+".png"
                 if logo_url is None: #not found logo
                     output_text += f"#EXTINF:-1 group-title=\"{group_name}\",{channel_name}\n"
                     output_text += f"{channel_url}\n"
