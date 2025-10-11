@@ -40,57 +40,11 @@ combined_blacklist = set(blacklist_auto + blacklist_manual)  #list是个列表�
 ys_lines = [] #央视频道
 ws_lines = [] #卫视频道
 ty_lines = [] #体育频道
-dy_lines = [] #电影频道
-dsj_lines = [] #电视剧频道
 gat_lines = [] #港澳台
-gj_lines = [] #国际台
-jlp_lines = [] #记录片
-xq_lines = [] #戏曲
-js_lines = [] #解说
-newtv_lines = [] #NewTV
-ihot_lines = [] #iHot
-et_lines = [] #儿童
-zy_lines = [] #综艺频道
-mdd_lines = [] #埋堆堆
-yy_lines = [] #音乐频道
-game_lines = [] #游戏频道
-radio_lines = [] #收音机频道
-zb_lines = [] #直播中国
-cw_lines = [] #春晚
-mtv_lines = [] #MTV
 migu_lines = [] #咪咕直播
 
 # 地方台
-sh_lines = [] #地方台-上海频道
-zj_lines = [] #地方台-浙江频道
-jsu_lines = [] #地方台-江苏频道
-gd_lines = [] #地方台-广东频道
-hn_lines = [] #地方台-湖南频道
-ah_lines = [] #地方台-安徽频道
-hain_lines = [] #地方台-海南频道
-nm_lines = [] #地方台-内蒙频道
 hb_lines = [] #地方台-湖北频道
-ln_lines = [] #地方台-辽宁频道
-sx_lines = [] #地方台-陕西频道
-shanxi_lines = [] #地方台-山西频道
-shandong_lines = [] #地方台-山东频道
-yunnan_lines = [] #地方台-云南频道
-bj_lines = [] #地方台-北京频道
-cq_lines = [] #地方台-重庆频道
-fj_lines = [] #地方台-福建频道
-gs_lines = [] #地方台-甘肃频道
-gx_lines = [] #地方台-广西频道
-gz_lines = [] #地方台-贵州频道
-heb_lines = [] #地方台-河北频道
-hen_lines = [] #地方台-河南频道
-hlj_lines = [] #地方台-黑龙江频道
-jl_lines = [] #地方台-吉林频道
-jx_lines = [] #地方台-江西频道
-nx_lines = [] #地方台-宁夏频道
-qh_lines = [] #地方台-青海频道
-sc_lines = [] #地方台-四川频道
-tj_lines = [] #地方台-天津频道
-xj_lines = [] #地方台-新疆频道
 
 other_lines = [] #其他
 other_lines_url = [] # 为降低other文件大小，剔除重复url添加
@@ -103,57 +57,11 @@ whitelist_auto_lines=read_txt_to_array('assets/whitelist-blacklist/whitelist_aut
 ys_dictionary=read_txt_to_array('主频道/央视频道.txt')
 ws_dictionary=read_txt_to_array('主频道/卫视频道.txt') 
 ty_dictionary=read_txt_to_array('主频道/体育频道.txt') 
-dy_dictionary=read_txt_to_array('主频道/电影.txt') 
-dsj_dictionary=read_txt_to_array('主频道/电视剧.txt') 
 gat_dictionary=read_txt_to_array('主频道/港澳台.txt') 
-gj_dictionary=read_txt_to_array('主频道/国际台.txt') 
-jlp_dictionary=read_txt_to_array('主频道/纪录片.txt') 
-xq_dictionary=read_txt_to_array('主频道/戏曲频道.txt') 
-js_dictionary=read_txt_to_array('主频道/解说频道.txt') 
-cw_dictionary=read_txt_to_array('主频道/春晚.txt') 
-newtv_dictionary=read_txt_to_array('主频道/NewTV.txt') 
-ihot_dictionary=read_txt_to_array('主频道/iHOT.txt')
-et_dictionary=read_txt_to_array('主频道/儿童频道.txt')
-zy_dictionary=read_txt_to_array('主频道/综艺频道.txt') 
-mdd_dictionary=read_txt_to_array('主频道/埋堆堆.txt') 
-yy_dictionary=read_txt_to_array('主频道/音乐频道.txt') 
-game_dictionary=read_txt_to_array('主频道/游戏频道.txt') 
-radio_dictionary=read_txt_to_array('主频道/收音机频道.txt') 
-zb_dictionary=read_txt_to_array('主频道/直播中国.txt') 
-mtv_dictionary=read_txt_to_array('主频道/MTV.txt') 
 migu_dictionary=read_txt_to_array('主频道/咪咕直播.txt') 
 
 # 地方台
-sh_dictionary=read_txt_to_array('地方台/上海频道.txt') 
-zj_dictionary=read_txt_to_array('地方台/浙江频道.txt') 
-jsu_dictionary=read_txt_to_array('地方台/江苏频道.txt') 
-gd_dictionary=read_txt_to_array('地方台/广东频道.txt') 
-hn_dictionary=read_txt_to_array('地方台/湖南频道.txt') 
-ah_dictionary=read_txt_to_array('地方台/安徽频道.txt') 
-hain_dictionary=read_txt_to_array('地方台/海南频道.txt') 
-nm_dictionary=read_txt_to_array('地方台/内蒙频道.txt') 
 hb_dictionary=read_txt_to_array('地方台/湖北频道.txt') 
-ln_dictionary=read_txt_to_array('地方台/辽宁频道.txt') 
-sx_dictionary=read_txt_to_array('地方台/陕西频道.txt') 
-shanxi_dictionary=read_txt_to_array('地方台/山西频道.txt') 
-shandong_dictionary=read_txt_to_array('地方台/山东频道.txt') 
-yunnan_dictionary=read_txt_to_array('地方台/云南频道.txt') 
-bj_dictionary=read_txt_to_array('地方台/北京频道.txt') 
-cq_dictionary=read_txt_to_array('地方台/重庆频道.txt') 
-fj_dictionary=read_txt_to_array('地方台/福建频道.txt') 
-gs_dictionary=read_txt_to_array('地方台/甘肃频道.txt') 
-gx_dictionary=read_txt_to_array('地方台/广西频道.txt') 
-gz_dictionary=read_txt_to_array('地方台/贵州频道.txt') 
-heb_dictionary=read_txt_to_array('地方台/河北频道.txt') 
-hen_dictionary=read_txt_to_array('地方台/河南频道.txt') 
-hlj_dictionary=read_txt_to_array('地方台/黑龙江频道.txt') 
-jl_dictionary=read_txt_to_array('地方台/吉林频道.txt') 
-jx_dictionary=read_txt_to_array('地方台/江西频道.txt') 
-nx_dictionary=read_txt_to_array('地方台/宁夏频道.txt') 
-qh_dictionary=read_txt_to_array('地方台/青海频道.txt') 
-sc_dictionary=read_txt_to_array('地方台/四川频道.txt') 
-tj_dictionary=read_txt_to_array('地方台/天津频道.txt') 
-xj_dictionary=read_txt_to_array('地方台/新疆频道.txt') 
 
 # 自定义源
 urls = read_txt_to_array('assets/urls.txt')
@@ -282,153 +190,15 @@ def process_channel_line(line):
             elif channel_name in ty_dictionary: #体育频道
                 if check_url_existence(ty_lines, channel_address):
                     ty_lines.append(line)
-            elif channel_name in dy_dictionary: #电影频道
-                if check_url_existence(dy_lines, channel_address):  
-                    dy_lines.append(line)
-            elif channel_name in dsj_dictionary: #电视剧频道
-                if check_url_existence(dsj_lines, channel_address):  
-                    dsj_lines.append(line)
             elif channel_name in gat_dictionary: #港澳台
                 if check_url_existence(gat_lines, channel_address):
                     gat_lines.append(line)
-            elif channel_name in gj_dictionary: #国际台
-                if check_url_existence(gj_lines, channel_address):
-                    gj_lines.append(line)
-            elif channel_name in jlp_dictionary: #纪录片
-                if check_url_existence(jlp_lines, channel_address):
-                    jlp_lines.append(line)
-            elif channel_name in xq_dictionary: #戏曲
-                if check_url_existence(xq_lines, channel_address):
-                    xq_lines.append(line)
-            elif channel_name in js_dictionary: #解说
-                if check_url_existence(js_lines, channel_address):
-                    js_lines.append(line)
-            elif channel_name in cw_dictionary: #春晚
-                if check_url_existence(cw_lines, channel_address):
-                    cw_lines.append(line)
-            elif channel_name in newtv_dictionary: #NewTV
-                if check_url_existence(newtv_lines, channel_address):
-                    newtv_lines.append(line)
-            elif channel_name in ihot_dictionary: #iHOT
-                if check_url_existence(ihot_lines, channel_address):
-                    ihot_lines.append(line)
-            elif channel_name in et_dictionary: #儿童
-                if check_url_existence(et_lines, channel_address):
-                    et_lines.append(line)
-            elif channel_name in zy_dictionary: #综艺频道
-                if check_url_existence(zy_lines, channel_address):
-                    zy_lines.append(line)
-            elif channel_name in mdd_dictionary: #埋堆堆
-                if check_url_existence(mdd_lines, channel_address):
-                    mdd_lines.append(line)
-            elif channel_name in yy_dictionary: #音乐频道
-                if check_url_existence(yy_lines, channel_address): 
-                    yy_lines.append(line)
-            elif channel_name in game_dictionary: #游戏频道
-                if check_url_existence(game_lines, channel_address):
-                    game_lines.append(line)
-            elif channel_name in radio_dictionary: #收音机频道
-                if check_url_existence(radio_lines, channel_address):
-                    radio_lines.append(line)
             elif channel_name in migu_dictionary: #咪咕直播
                 if check_url_existence(migu_lines, channel_address):
                     migu_lines.append(line)
-            elif channel_name in sh_dictionary: #地方台-上海频道
-                if check_url_existence(sh_lines, channel_address): 
-                    sh_lines.append(line)
-            elif channel_name in zj_dictionary: #地方台-浙江频道
-                if check_url_existence(zj_lines, channel_address):
-                    zj_lines.append(line)
-            elif channel_name in jsu_dictionary: #地方台-江苏频道
-                if check_url_existence(jsu_lines, channel_address):
-                    jsu_lines.append(line)
-            elif channel_name in gd_dictionary: #地方台-广东频道
-                if check_url_existence(gd_lines, channel_address):
-                    gd_lines.append(line)
-            elif channel_name in hn_dictionary: #地方台-湖南频道
-                if check_url_existence(hn_lines, channel_address):
-                    hn_lines.append(line)
             elif channel_name in hb_dictionary: #地方台-湖北频道
                 if check_url_existence(hb_lines, channel_address):
                     hb_lines.append(line)
-            elif channel_name in ah_dictionary: #地方台-安徽频道
-                if check_url_existence(ah_lines, channel_address):
-                    ah_lines.append(line)
-            elif channel_name in hain_dictionary: #地方台-海南频道
-                if check_url_existence(hain_lines, channel_address):
-                    hain_lines.append(line)
-            elif channel_name in nm_dictionary: #地方台-内蒙频道
-                if check_url_existence(nm_lines, channel_address):
-                    nm_lines.append(line)
-            elif channel_name in ln_dictionary: #地方台-辽宁频道
-                if check_url_existence(ln_lines, channel_address):
-                    ln_lines.append(line)
-            elif channel_name in sx_dictionary: #地方台-陕西频道
-                if check_url_existence(sx_lines, channel_address): 
-                    sx_lines.append(line)
-            elif channel_name in shanxi_dictionary: #地方台-山西频道
-                if check_url_existence(shanxi_lines, channel_address):
-                    shanxi_lines.append(line)
-            elif channel_name in shandong_dictionary: #地方台-山东频道
-                if check_url_existence(shandong_lines, channel_address):
-                    shandong_lines.append(line)
-            elif channel_name in yunnan_dictionary: #地方台-云南频道
-                if check_url_existence(yunnan_lines, channel_address):
-                    yunnan_lines.append(line)
-            elif channel_name in bj_dictionary: #地方台-北京频道
-                if check_url_existence(bj_lines, channel_address):
-                    bj_lines.append(line)
-            elif channel_name in cq_dictionary: #地方台-重庆频道
-                if check_url_existence(cq_lines, channel_address):
-                    cq_lines.append(line)
-            elif channel_name in fj_dictionary: #地方台-福建频道
-                if check_url_existence(fj_lines, channel_address):
-                    fj_lines.append(line)
-            elif channel_name in gs_dictionary: #地方台-甘肃频道
-                if check_url_existence(gs_lines, channel_address):
-                    gs_lines.append(line)
-            elif channel_name in gx_dictionary: #地方台-广西频道
-                if check_url_existence(gx_lines, channel_address): 
-                    gx_lines.append(line)
-            elif channel_name in gz_dictionary: #地方台-贵州频道
-                if check_url_existence(gz_lines, channel_address):
-                    gz_lines.append(line)
-            elif channel_name in heb_dictionary: #地方台-河北频道
-                if check_url_existence(heb_lines, channel_address):
-                    heb_lines.append(line)
-            elif channel_name in hen_dictionary: #地方台-河南频道
-                if check_url_existence(hen_lines, channel_address):
-                    hen_lines.append(line)
-            elif channel_name in hlj_dictionary: #地方台-黑龙江频道
-                if check_url_existence(hlj_lines, channel_address):
-                    hlj_lines.append(line)
-            elif channel_name in jl_dictionary: #地方台-吉林频道
-                if check_url_existence(jl_lines, channel_address):
-                    jl_lines.append(line)
-            elif channel_name in nx_dictionary: #地方台-宁夏频道
-                if check_url_existence(nx_lines, channel_address):
-                    nx_lines.append(line)
-            elif channel_name in jx_dictionary: #地方台-江西频道
-                if check_url_existence(jx_lines, channel_address):
-                    jx_lines.append(line)
-            elif channel_name in qh_dictionary: #地方台-青海频道
-                if check_url_existence(qh_lines, channel_address):
-                    qh_lines.append(line)
-            elif channel_name in sc_dictionary: #地方台-四川频道
-                if check_url_existence(sc_lines, channel_address):
-                    sc_lines.append(line)
-            elif channel_name in tj_dictionary: #地方台-天津频道
-                if check_url_existence(tj_lines, channel_address):
-                    tj_lines.append(line)
-            elif channel_name in xj_dictionary: #地方台-新疆频道
-                if check_url_existence(xj_lines, channel_address):
-                    xj_lines.append(line)
-            elif channel_name in zb_dictionary: #直播中国
-                if check_url_existence(zb_lines, channel_address):
-                    zb_lines.append(line)
-            elif channel_name in mtv_dictionary: #MTV
-                if check_url_existence(mtv_lines, channel_address):
-                    mtv_lines.append(line)
             else:
                 if channel_address not in other_lines_url:
                     other_lines_url.append(channel_address)   #记录已加url
@@ -540,58 +310,13 @@ all_lines_simple =  ["更新时间,#genre#"] + [version] + ['\n'] +\
                     ["央视频道,#genre#"] + sort_data(ys_dictionary,ys_lines) + ['\n'] + \
                     ["卫视频道,#genre#"] + sort_data(ws_dictionary,ws_lines) + ['\n'] + \
                     ["港澳台,#genre#"] + sort_data(gat_dictionary,gat_lines) + ['\n'] + \
-                    ["电影频道,#genre#"] + sort_data(dy_dictionary,dy_lines) + ['\n'] + \
-                    ["电视剧频道,#genre#"] + sort_data(dsj_dictionary,dsj_lines) + ['\n'] + \
-                    ["综艺频道,#genre#"] + sort_data(zy_dictionary,zy_lines) + ['\n'] + \
-                    ["NewTV,#genre#"] + sort_data(newtv_dictionary,newtv_lines) + ['\n'] + \
-                    ["iHOT,#genre#"] + sort_data(ihot_dictionary,ihot_lines) + ['\n'] + \
                     ["体育频道,#genre#"] + sort_data(ty_dictionary,ty_lines) + ['\n'] + \
                     ["咪咕直播,#genre#"] + sort_data(migu_dictionary,migu_lines)+ ['\n'] + \
                     ["埋堆堆,#genre#"] + sort_data(mdd_dictionary,mdd_lines) + ['\n'] + \
-                    ["音乐频道,#genre#"] + sorted(yy_lines) + ['\n'] + \
-                    ["游戏频道,#genre#"] + sorted(game_lines) + ['\n'] + \
-                    ["解说频道,#genre#"] + sorted(js_lines)
 
 # 合并所有对象中的行文本（去重，排序后拼接）
 all_lines =  all_lines_simple + ['\n'] + \
-             ["儿童,#genre#"] + sort_data(et_dictionary,et_lines) + ['\n'] + \
-             ["国际台,#genre#"] + sort_data(gj_dictionary,gj_lines) + ['\n'] + \
-             ["纪录片,#genre#"] + sort_data(jlp_dictionary,jlp_lines)+ ['\n'] + \
-             ["戏曲频道,#genre#"] + sort_data(xq_dictionary,xq_lines) + ['\n'] + \
-             ["上海频道,#genre#"] + sort_data(sh_dictionary,sh_lines) + ['\n'] + \
-             ["湖南频道,#genre#"] + sort_data(hn_dictionary,hn_lines) + ['\n'] + \
              ["湖北频道,#genre#"] + sort_data(hb_dictionary,hb_lines) + ['\n'] + \
-             ["广东频道,#genre#"] + sort_data(gd_dictionary,gd_lines) + ['\n'] + \
-             ["浙江频道,#genre#"] + sort_data(zj_dictionary,zj_lines) + ['\n'] + \
-             ["山东频道,#genre#"] + sort_data(shandong_dictionary,shandong_lines) + ['\n'] + \
-             ["江苏频道,#genre#"] + sorted(jsu_lines) + ['\n'] + \
-             ["安徽频道,#genre#"] + sorted(ah_lines) + ['\n'] + \
-             ["海南频道,#genre#"] + sorted(hain_lines) + ['\n'] + \
-             ["内蒙频道,#genre#"] + sorted(nm_lines) + ['\n'] + \
-             ["辽宁频道,#genre#"] + sorted(ln_lines) + ['\n'] + \
-             ["陕西频道,#genre#"] + sorted(sx_lines) + ['\n'] + \
-             ["山西频道,#genre#"] + sorted(shanxi_lines) + ['\n'] + \
-             ["云南频道,#genre#"] + sorted(yunnan_lines) + ['\n'] + \
-             ["北京频道,#genre#"] + sorted(bj_lines) + ['\n'] + \
-             ["重庆频道,#genre#"] + sorted(cq_lines) + ['\n'] + \
-             ["福建频道,#genre#"] + sorted(fj_lines) + ['\n'] + \
-             ["甘肃频道,#genre#"] + sorted(gs_lines) + ['\n'] + \
-             ["广西频道,#genre#"] + sorted(gx_lines) + ['\n'] + \
-             ["贵州频道,#genre#"] + sorted(gz_lines) + ['\n'] + \
-             ["河北频道,#genre#"] + sorted(heb_lines) + ['\n'] + \
-             ["河南频道,#genre#"] + sorted(hen_lines) + ['\n'] + \
-             ["黑龙江频道,#genre#"] + sorted(hlj_lines) + ['\n'] + \
-             ["吉林频道,#genre#"] + sorted(jl_lines) + ['\n'] + \
-             ["江西频道,#genre#"] + sorted(jx_lines) + ['\n'] + \
-             ["宁夏频道,#genre#"] + sorted(nx_lines) + ['\n'] + \
-             ["青海频道,#genre#"] + sorted(qh_lines) + ['\n'] + \
-             ["四川频道,#genre#"] + sorted(sc_lines) + ['\n'] + \
-             ["天津频道,#genre#"] + sorted(tj_lines) + ['\n'] + \
-             ["新疆频道,#genre#"] + sorted(xj_lines) + ['\n'] + \
-             ["春晚,#genre#"] + sort_data(cw_dictionary,cw_lines)  + ['\n'] + \
-             ["直播中国,#genre#"] + sorted(zb_lines) + ['\n'] + \
-             ["MTV,#genre#"] + sorted(mtv_lines) + ['\n'] + \
-             ["收音机频道,#genre#"] + sort_data(radio_dictionary,radio_lines)
 
 # 将合并后的文本写入文件
 output_file = "live.txt"
