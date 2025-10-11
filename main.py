@@ -310,7 +310,7 @@ all_lines_simple =  ["更新时间,#genre#"] + [version] + ['\n'] +\
                     ["央视频道,#genre#"] + sort_data(ys_dictionary,ys_lines) + ['\n'] + \
                     ["卫视频道,#genre#"] + sort_data(ws_dictionary,ws_lines) + ['\n'] + \
                     ["港澳台,#genre#"] + sort_data(gat_dictionary,gat_lines) + ['\n'] + \
-                    ["电影频道,#genre#"] + sort_data(dy_dictionary,dy_lines) + ['\n'] + \
+                    ["电影频道,#genre#"] + sort_data(ty_dictionary,ty_lines) + ['\n'] + \
                     ["电视剧频道,#genre#"] + sort_data(dsj_dictionary,dsj_lines) + ['\n'] + \
                     ["综艺频道,#genre#"] + sort_data(zy_dictionary,zy_lines) + ['\n'] + \
                     ["NewTV,#genre#"] + sort_data(newtv_dictionary,newtv_lines) + ['\n'] + \
