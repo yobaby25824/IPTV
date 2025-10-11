@@ -312,6 +312,10 @@ all_lines_simple =  ["更新时间,#genre#"] + [version] + ['\n'] +\
                     ["港澳台,#genre#"] + sort_data(gat_dictionary,gat_lines) + ['\n'] + \
                     ["体育频道,#genre#"] + sort_data(ty_dictionary,ty_lines) + ['\n'] + \
                     ["咪咕直播,#genre#"] + sort_data(migu_dictionary,migu_lines)+ ['\n'] + \
+                    ["埋堆堆,#genre#"] + sort_data(mdd_dictionary,mdd_lines) + ['\n'] + \
+                    ["音乐频道,#genre#"] + sorted(yy_lines) + ['\n'] + \
+                    ["游戏频道,#genre#"] + sorted(game_lines) + ['\n'] + \
+                    ["解说频道,#genre#"] + sorted(js_lines)
 
 # 合并所有对象中的行文本（去重，排序后拼接）
 all_lines =  all_lines_simple + ['\n'] + \
